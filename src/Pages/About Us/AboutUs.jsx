@@ -20,17 +20,20 @@ function AboutUs() {
             <div className="aboutContent">
                 <div className='containerUser'>
                     <Row >
-                            <Col lg='6' md='12' sm='12' className='aboutContent-data'>
-                                <span> <ImQuotesLeft/>  </span>
-                                <h1>Best One Clinic </h1>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis ratione, repellat, aut blanditiis cum consequuntur maiores dignissimos a dolorum consectetur, fuga pariatur! Id totam deserunt numquam dignissimos explicabo. Provident repudiandae consectetur fugiat fugit, quis omnis adipisci officiis assumenda odit necessitatibus deserunt porro sequi veniam nemo. Consequatur consectetur voluptates, maxime eaque et quasi, aliquam, ipsum odio deleniti debitis officia laborum error.</p>
-                            </Col>
+                        <Col lg='6' md='12' sm='12' className='aboutContent-data'>
+                            <span> <ImQuotesLeft />  </span>
+                            <h1>Best One Clinic </h1>
+                            <p>The best medical beauty clinic offers everything related to the field of dermatology, beauty and laser to serve the honourable people of Jeddah                                </p>
+                            <p>
+                                Better Beauty Clinic includes a distinguished group of consultants and specialists who have the highest international certificates to meet the needs of customers exceptionally so that they are fully satisfied with the quality of services and distinctive prices
+                            </p>
+                        </Col>
 
-                            <Col lg='6' md='12' sm='12' className=' aboutContent-image'>
-                                <div className="aboutImgBox">
-                                    <img src={aboutImg} alt="about " />
-                                </div>
-                            </Col>
+                        <Col lg='6' md='12' sm='12' className=' aboutContent-image'>
+                            <div className="aboutImgBox">
+                                <img src={aboutImg} alt="about " />
+                            </div>
+                        </Col>
                     </Row>
                 </div>
             </div>
