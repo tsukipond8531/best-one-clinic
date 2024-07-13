@@ -3,14 +3,15 @@
 
 .swiper {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 90px);
 }
 
 .swiper-slide {
     background-position: center;
     background-size: cover;
 }
-.swiper-slide:nth-child(2n){
+
+.swiper-slide:nth-child(2n) {
     background-color: beige !important;
 }
 
@@ -40,7 +41,7 @@
     color: var(--mainColor) !important;
     width: 70px !important;
     height: 70px !important;
-    border-radius: 50% ;
+    border-radius: 50%;
     background-color: #232c3bbd !important;
     /* font-size: 15px !important; */
 }
@@ -53,18 +54,20 @@
     /* background-color: blueviolet; */
     /* background: linear-gradient(90deg, rgba(220, 173, 173, 1) 0%, rgba(246, 198, 198, 1) 81%); */
 
-    background-image: url('../../../public/Images/4350391@3x.png') ;
+    background-image: url('../../../public/Images/4350391@3x.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
-.mainParent .mainContentParent{
-    height: 100vh;    
+
+.mainParent .mainContentParent {
+    height: 100vh;
     /* background-color: aliceblue; */
 
     display: flex;
     align-items: center;
 }
-.mainParent .content-data{
+
+.mainParent .content-data {
     height: 30vh;
     /* background-color: antiquewhite; */
     display: flex;
@@ -73,16 +76,18 @@
     align-items: flex-start;
 }
 
-.content-data h1{
+.content-data h1 {
     font-size: 3.8rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--mainText);
 }
-.content-data p{
+
+.content-data p {
     font-size: 1.5rem;
     letter-spacing: 1px;
 }
+
 .content-data button {
     width: 200px;
     height: 55px;
@@ -96,41 +101,56 @@
     transition: 0.5s ease;
     text-transform: capitalize;
 }
-.content-data button:hover{
+
+.content-data button:hover {
     background-color: var(--HeaderColor);
     color: var(--mainColor);
 }
 
 
-.imgBox{
+.imgBox {
     background-color: white;
     width: 500px;
     height: 500px;
     border-radius: 100px;
     border: 1px solid var(--mainColor);
-    box-shadow:  1px 1px 15px 10px var(--mainColor);
+    box-shadow: 1px 1px 15px 10px var(--mainColor);
     overflow: hidden;
 }
+
 /* End Main Style */
 
 /* Responsive CSS Style   */
 @media screen and (max-width: 768px) {
-    .mainParent{
-        /* height: auto; */
+    .swiper {
+        height: 30vh;
     }
-    .mainParent .mainContentParent{
-        height: 60vh;    
+
+    .swiper-pagination-bullet {
+        width: 20px !important;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .mainParent .mainContentParent {
+        height: 60vh;
         /* background-color: aliceblue; */
         margin-top: 100px;
         display: flex;
         align-items: flex-start;
         justify-content: center !important;
     }
+
     .content-data {
         justify-content: center !important;
         align-items: center !important;
         text-align: center;
     }
+
     .imgBox {
         width: 300px;
         height: 300px;

@@ -32,25 +32,12 @@ function Main() {
                 mainData.map((item) => (
                     <>
                         <SwiperSlide key={item.id}>
+
+
+
+                            <img src={getImageUrl(item.bg)} alt="" />
                             {/* <img src={img1} /> */}
-                            <div className="mainParent">
-                                <Container>
-                                    <Row>
-                                        <Col lg='6' md='12' sm='12' className='mainContentParent'>
-                                            <div className="content-data    ">
-                                                <h1>{item.title}</h1>
-                                                <p>{item.text}</p>
-                                                <button id={item.id}> Book now </button>
-                                            </div>
-                                        </Col>
-                                        <Col lg='6' md='12' sm='12' className='mainContentParent justify-content-end'>
-                                            <div className="imgBox">
-                                                <img src={getImageUrl(item.ImgUrl)} alt="img" width={100} height={100} />
-                                            </div>
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </div>
+                            
                         </SwiperSlide>
                     </>
                 ))
@@ -67,3 +54,21 @@ function getImageUrl(imageName) {
 }
 
 
+{/* <div className="mainParent">
+                                <Container>
+                                    <Row>
+                                        <Col lg='6' md='12' sm='12' className='mainContentParent'>
+                                            <div className="content-data    ">
+                                                <h1>{item.title}</h1>
+                                                <p>{item.text}</p>
+                                                <button id={item.id}> Book now </button>
+                                            </div>
+                                        </Col>
+                                        <Col lg='6' md='12' sm='12' className='mainContentParent justify-content-end'>
+                                            <div className="imgBox">
+                                                <img src={getImageUrl(item.ImgUrl)} alt="img" width={100} height={100} />
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            </div> */}

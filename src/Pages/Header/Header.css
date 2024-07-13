@@ -57,10 +57,11 @@
     height: 90px !important;
     width: 100% !important;
     position: fixed;
-    background-color: transparent;
+    /* background-color: transparent; */
     /* Initial background color */
     transition: 0.5s ease-in-out !important;
     z-index: 10000001 !important;
+    
 }
 
 .brandLogo {
@@ -89,10 +90,10 @@
 .dropTitle {
     text-decoration: none;
     font-size: 1.5rem !important;
-    font-weight: 500 !important;
-    color: var(--mainColor) !important;
+    font-weight: 600 !important;
+    color: var(--fontColor) !important;
     transition: 0.5s ease;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     text-transform: capitalize;
 }
 
@@ -101,13 +102,10 @@
     color: var(--fontColor) !important;
 }
 
-.bgColor,
+/* .bgColor,
 .dropmenu {
-    /* background: linear-gradient(90deg, rgba(67, 100, 132, 1) 43%, rgba(41, 68, 92, 1) 78%); ! */
-    /* background: linear-gradient(166deg, rgba(67, 100, 132, 1) 43%, rgba(41, 68, 92, 1) 78%); */
-    /* background: linear-gradient(91deg, rgba(41, 68, 92, 1) 43%, rgba(67, 100, 132, 1) 79%); */
     background-color: var(--HeaderColor) !important;
-}
+} */
 
 
 .seacrhStyle {

@@ -10,27 +10,28 @@ function Header() {
     // Define variables
     const navigate = useNavigate()
     // const SmallWidth = screen.availWidth < 768
-    const [scrolled, setScrolled] = useState(false)
+    // const [scrolled, setScrolled] = useState(false)
 
 
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const handleScroll = () => {
-            const isScrolled = window.scrollY > 100
-            setScrolled(isScrolled)
-        }
-        window.addEventListener('scroll', handleScroll)
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
+    //     const handleScroll = () => {
+    //         const isScrolled = window.scrollY > 100
+    //         setScrolled(isScrolled)
+    //     }
+    //     window.addEventListener('scroll', handleScroll)
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll)
+    //     }
+    // }, [])
 
 
     return (
-        <Navbar expand="lg" className={scrolled ? "bgColor nav-height" : "nav-height"} fixed='top'>
+        // <Navbar expand="lg" className={scrolled ? "bgColor nav-height" : "bg-body-tertiary nav-height"} fixed='top'>
+        <Navbar expand="lg" className="nav-height bg-body-tertiary">
             <Container fluid>
-                <Navbar.Brand href="/" className='brandLogo'>
+                <Navbar.Brand href="/home" className='brandLogo'>
                     <img src={logo} alt="logo" width={75} height={60} />
                 </Navbar.Brand>
 
