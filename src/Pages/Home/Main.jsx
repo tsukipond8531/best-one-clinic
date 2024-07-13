@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 // Import Image
 // import img1 from '../../assets/Images/4350391@3x.png'
 // import img2 from '../../assets/Images/4170388@3x.png'
-import mainImage from '../../../public/Images/image.png'
+// import mainImage from '../../../public/Images/image.png'
 import { Col, Container, Row } from 'react-bootstrap';
 
 import { mainData } from '../../assets/Data Of Pages/Main.data.js'
