@@ -25,7 +25,7 @@ function AboutUs() {
                             <h1>Best One Clinic </h1>
                             <p>The best medical beauty clinic offers everything related to the field of dermatology, beauty and laser to serve the honourable people of Jeddah                                </p>
                             <p>
-                                Better Beauty Clinic includes a distinguished group of consultants and specialists who have the highest international certificates to meet the needs of customers exceptionally so that they are fully satisfied with the quality of services and distinctive prices
+                                Better Beauty Clinic includes a distinguished group of consultants and specialists who have the highest international certificates to meet the needs of customers exceptionally so that they are fully satisfied with the quality of services and distinctive prices
                             </p>
                         </Col>
 

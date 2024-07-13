@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ReadMore = styled.button`
     border: none; 
     background-color: white;
-    color: rgb(0, 172, 181);
+    color: var(--mainColor  );
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
