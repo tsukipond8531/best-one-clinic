@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
 import './Header.css'
 import { Container, Form, Nav, Navbar, Button } from 'react-bootstrap';
@@ -9,22 +9,6 @@ import Dropdownlist from '../../Components/DropDown';
 function Header() {
     // Define variables
     const navigate = useNavigate()
-    // const SmallWidth = screen.availWidth < 768
-    // const [scrolled, setScrolled] = useState(false)
-
-
-
-    // useEffect(() => {
-
-    //     const handleScroll = () => {
-    //         const isScrolled = window.scrollY > 100
-    //         setScrolled(isScrolled)
-    //     }
-    //     window.addEventListener('scroll', handleScroll)
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll)
-    //     }
-    // }, [])
 
 
     return (

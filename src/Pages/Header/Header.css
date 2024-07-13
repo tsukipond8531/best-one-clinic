@@ -61,7 +61,7 @@
     /* Initial background color */
     transition: 0.5s ease-in-out !important;
     z-index: 10000001 !important;
-    
+
 }
 
 .brandLogo {
@@ -110,10 +110,12 @@
 
 .seacrhStyle {
     box-shadow: none !important;
-    background-color: var(--mainColor) !important;
-    border: none !important;
+    background-color: #ddd !important;
+    /* border: none !important; */
+    border-color: var(--HeaderColor) !important;
     border-radius: 15px !important;
     transition: 0.5s ease !important;
+    color: #0000 !important;
     opacity: 0.5;
 }
 
@@ -125,15 +127,16 @@
 .btnLogin,
 .btnSearch {
     width: 152px;
-    border-color: var(--mainColor) !important;
-    color: var(--mainColor) !important;
+    border-color: var(--HeaderColor) !important;
+    color: var(--HeaderColor) !important;
     font-size: 1.1rem !important;
     letter-spacing: 1px;
 }
 
 .btnLogin:hover,
 .btnSearch:hover {
-    background-color: var(--bgColor) !important;
+    background-color: var(--fontColor) !important;
+    color: var(--whiteColor) !important;
 }
 
 
@@ -162,6 +165,11 @@
         align-items: flex-start;
     }
 
+    .btnLogin,
+    .btnSearch {
+        border-color: var(--whiteColor) !important;
+        color: var(--whiteColor) !important;
+    }
     .navbar-scroll {
         z-index: 1000000 !important;
     }
