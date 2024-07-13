@@ -20,7 +20,7 @@ function AboutUs() {
                     <Row >
                             <Col lg='6' md='12' sm='12' className='aboutContent-data'>
                                 <span> <ImQuotesLeft/>  </span>
-                                <h1>Beauty Clinic </h1>
+                                <h1>Best One Clinic </h1>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis ratione, repellat, aut blanditiis cum consequuntur maiores dignissimos a dolorum consectetur, fuga pariatur! Id totam deserunt numquam dignissimos explicabo. Provident repudiandae consectetur fugiat fugit, quis omnis adipisci officiis assumenda odit necessitatibus deserunt porro sequi veniam nemo. Consequatur consectetur voluptates, maxime eaque et quasi, aliquam, ipsum odio deleniti debitis officia laborum error.</p>
                             </Col>
 
