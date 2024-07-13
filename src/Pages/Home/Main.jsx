@@ -66,21 +66,4 @@ function getImageUrl(imageName) {
     return new URL(`../../../public/Images/${imageName}`, import.meta.url).href;
 }
 
-{/* <div className="mainParent">
-<div className="mainContent">
-<span className='shape'></span>
-<span className='shape2'></span>
-<div className="mainContent-data">
-    <h1>Beauty Clinic</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum sunt nisi, iusto impedit rerum provident?</p>
-    <button> Book now </button>
-</div>
-</div>
-<div className="mainImage">
-<span className='shape3'></span>
-<div className="imgBox">
-    <img src={mainImage} alt="img" width={100} height={100} />
-</div>
-</div>
-</div> */}
 

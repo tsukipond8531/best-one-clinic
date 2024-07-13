@@ -1,12 +1,14 @@
 import { } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 
 import aboutImg from '../../../public/Images/9082599.jpg'
 import './AboutUs.css'
 import { ImQuotesLeft } from "react-icons/im";
 function AboutUs() {
+
+
     return (
-        <section className=''>
+        <section className='pt-5'>
 
             <div className="sectionHeader">
                 <span className='headerSpan'></span>
@@ -32,6 +34,7 @@ function AboutUs() {
                     </Row>
                 </div>
             </div>
+
         </section>
     )
 }

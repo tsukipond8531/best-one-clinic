@@ -1,11 +1,52 @@
 import { } from 'react'
-
+import { Card, Col, Container, Row } from 'react-bootstrap'
+import './Devices.css'
+import BtnReadMore from '../../Components/BtnReadMore'
+import { devicesData } from '../../assets/Data Of Pages/Main.data'
 function Devices() {
+
+
+
     return (
-        <section className='AllParent'>
-            <h1>Devices Page</h1>
+        <section className='pt-5'>
+            <div className="sectionHeader">
+                <span className='headerSpan'></span>
+                <h1 className='text-center sectionTitle'> Our Devices </h1>
+                <span className='headerSpan'></span>
+            </div>
+
+
+            <Container>
+                <Row>
+                    {
+                        devicesData.map((item) => (
+                            <>
+                                <Col lg='4' md='6' sm='10' className='mb-4'>
+                                    <Card style={{ width: "100%" }} className='devCard' key={item.id}>
+                                        <Card.Img variant='top' src={getImageUrl(item.image)} className='devImages' />
+
+                                        <Card.Body className='dev-content'>
+                                            <Card.Title className='devTitle'> {item.title}</Card.Title>
+                                            <Card.Text className='dev-text'>
+                                                {item.text}
+                                                <BtnReadMore content={item.ReadMore} />
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            </>
+                        ))
+                    }
+
+                </Row>
+            </Container>
+
         </section>
     )
 }
 
 export default Devices
+
+function getImageUrl(imageName) {
+    return new URL(`../../../public/Images/${imageName}`, import.meta.url).href;
+}

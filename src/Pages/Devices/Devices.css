@@ -1,0 +1,33 @@
+.devCard{
+    width: 100%;
+    border-radius: 30px  60px !important; 
+    transition: 0.5s ease !important;
+    overflow: hidden;
+    border-color: var(--mainColor) !important;
+    border-width:2px !important;
+}
+.devCard:hover .devImages{
+    transform: scale(1.2);
+}
+
+.devImages{
+    height: 30vh;
+    width: 100%;
+    object-fit: contain;
+    transition: 0.5s ease;
+    overflow: hidden;
+}
+.dev-content{
+    padding: 30px !important;
+
+}
+.devTitle{
+    text-transform: capitalize !important;
+    letter-spacing: 1px !important;
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    color: var(--HeaderText) !important;
+}
+.dev-text{
+    font-size: .9rem !important;
+}
