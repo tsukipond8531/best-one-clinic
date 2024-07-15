@@ -71,3 +71,51 @@ export const devicesData = [
 
 ]
 
+
+export const offerData = [
+    {
+        id : "1",
+        title : "Dental offers",
+        img  : "off-1.jpg"
+    },
+    {
+        id : "2",
+        title : "Dental offers",
+        img  : "off-1.jpg"
+    },
+    {
+        id : 3,
+        title : "Dental offers",
+        img  : "off-1.jpg"
+    },
+    {
+        id : 4,
+        title : "Dental offers",
+        img  : "off-1.jpg"
+    },
+    {
+        id : 5,
+        title : "Dental offers",
+        img  : "off-1.jpg"
+    },
+    {
+        id : 6,
+        title : "Dental offers",
+        img  : "off-1.jpg"
+    },
+    {
+        id : 7,
+        title : "Dental offers",
+        img  : "off-1.jpg"
+    },
+    {
+        id : 8,
+        title : "Dental offers",
+        img  : "off-1.jpg"
+    },
+]
+
+
+export function getImageUrl(imageName) {
+    return new URL(`../../../public/Images/${imageName}`, import.meta.url).href;
+}

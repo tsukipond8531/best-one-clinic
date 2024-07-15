@@ -17,11 +17,13 @@
     font-weight: 600;
     letter-spacing: 3px;
     margin: 20px 0;
+    color: var(--text2Color);
 }
 .aboutContent-data p {
     font-size: 1.2rem;
     letter-spacing: 1px;
-
+    font-weight: 500;
+    color: var(--textColor) !important;
 }
 .aboutImgBox{
     width: 600px;

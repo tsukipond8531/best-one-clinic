@@ -9,15 +9,14 @@
     --fontColor : #29445c;
     --bgColor : #436484;
     --HeaderColor : #232c3b;
-    --HeaderText : #6990B3;
+    --HeaderText : #DDD8FF;
     --whiteColor : #ffffff;
+    --textColor  : #20108F;
+    --text2Color : #0D0066;
 }
 body{
-    /* height: 120vh; */
     font-family: "Dosis", sans-serif !important;
     font-optical-sizing: auto;
-    /* font-weight: <weight>; */
-    /* font-style: normal; */
 }
 
 .AllParent {

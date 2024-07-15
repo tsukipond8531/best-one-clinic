@@ -2,7 +2,7 @@ import { } from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
 import './Devices.css'
 import BtnReadMore from '../../Components/BtnReadMore'
-import { devicesData } from '../../assets/Data Of Pages/Main.data'
+import { devicesData , getImageUrl } from '../../assets/Data Of Pages/Main.data'
 function Devices() {
 
 
@@ -47,6 +47,3 @@ function Devices() {
 
 export default Devices
 
-function getImageUrl(imageName) {
-    return new URL(`../../../public/Images/${imageName}`, import.meta.url).href;
-}

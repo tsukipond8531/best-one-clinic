@@ -7,6 +7,8 @@ import AboutUs from './Pages/About Us/AboutUs';
 import Contact from './Pages/Contact US/Contact';
 import Offers from './Pages/Offers/Offers';
 import Devices from './Pages/Devices/Devices';
+import OfferOption from './Pages/Offers/Offer.option';
+import Products from './Pages/Products/Products';
 
 // Import Styles
 import './App.css'
@@ -25,6 +27,10 @@ function App() {
             <Route index path='/contact' element={<Contact/>} />
             <Route index path='/offers' element={<Offers/>} />
             <Route index path='/devices' element={<Devices/>} />
+
+
+            <Route index path='/offer/option/:id' element={<OfferOption/>} />
+            <Route index path='/products' element={<Products/>} />
 
 
             <Route path='/login' element={<Login/>} />
