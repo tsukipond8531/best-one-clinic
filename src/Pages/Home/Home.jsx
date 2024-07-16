@@ -4,6 +4,7 @@ import Main from './Main'
 // Import Styles And Images
 import './Home.css'
 import AboutUs from '../About Us/AboutUs'
+import Footer from '../Footer/Footer'
 
 function Home() {
     return (
@@ -16,6 +17,10 @@ function Home() {
             <AboutUs />
             {/* End About Us Section  */}
 
+
+            {/* Start Footer Section */}
+            <Footer/>
+            {/* End Footer Section */}
         </section>
     )
 }

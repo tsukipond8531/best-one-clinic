@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import {offerData} from '../../assets/Data Of Pages/Main.data'
+import Footer from '../Footer/Footer';
 function OfferOption() {
 
     const {id} = useParams()
@@ -14,7 +15,13 @@ function OfferOption() {
     } , [])
 
     return (
-        <div>OfferOption</div>
+        <>
+        <h1>Options</h1>
+        
+        {/* Start Footer */}
+        <Footer/>
+        {/* End Footer */}
+        </>
     )
 }
 

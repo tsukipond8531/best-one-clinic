@@ -2,10 +2,11 @@ import { } from 'react'
 
 import "./Offers.css"
 import { Col, Container, Row } from 'react-bootstrap'
-import imageOffer from '../../../public/Images/off-1.jpg'
+// import imageOffer from '../../../public/Images/off-1.jpg'
 
 import { getImageUrl, offerData } from '../../assets/Data Of Pages/Main.data'
 import { useNavigate } from 'react-router-dom'
+import Footer from '../Footer/Footer'
 function Offers() {
 
     const navigate = useNavigate()
@@ -21,6 +22,7 @@ function Offers() {
                 <h1 className='text-center sectionTitle'>Our Offers </h1>
                 <span className='headerSpan'></span>
             </div>
+
 
             <section className='offers'>
                 <Container>
@@ -50,6 +52,10 @@ function Offers() {
                 </Container>
             </section>
 
+
+            {/* Start Footer */}
+            <Footer/>
+            {/* End Footer */}
         </section>
     )
 }

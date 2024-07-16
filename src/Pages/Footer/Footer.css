@@ -1,0 +1,118 @@
+
+.footer-section{
+    height: auto ;
+    width: 100%;
+    overflow: hidden;
+    
+}
+.footer-partOne{
+    width: 100%;
+    height: 100%;
+    background-color: var(--fontColor) !important;
+    color: var(--whiteColor);
+}
+.footer-partOne .footer-img img{
+    display: block;
+    margin:  0 auto;
+}
+.footer-partOne p{
+    padding: 10px;
+    text-transform: capitalize;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.footer-partOne .footer-sitemap , .footer-partOne .footer-connect { 
+    padding: 25px ;
+    transition: all 1s !important;
+
+}
+.footer-connect h3 , .footer-sitemap h3 {
+    font-size: 2.2rem;
+    letter-spacing: 2px !important;
+}
+.footer-partOne .footer-sitemap ul{
+    display: block;
+    list-style: none;
+    padding: 15px;
+    line-height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.footer-partOne .footer-sitemap li{
+    width: 200px;
+}
+.footer-partOne .footer-sitemap li:hover{
+    color: var(--mainColor);
+
+}
+
+.footer-partOne .footer-connect .socailIcons{
+    height: 13vh;
+    width: 80%;
+    display: flex;
+    font-size: 25px !important;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    /* background-color: antiquewhite; */
+}
+.socialIcon{
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--mainColor);
+    font-size: 1.5rempx !important;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+
+}
+
+.footer-partOne .footer-connect .socialIcon:hover{
+    color: var(--mainColor);
+    background-color: var(--bgColor);
+}
+
+
+
+.footer-partTwo{
+    height: 80px;
+    background-color: var(--bgColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-partTwo p{
+    color: var(--whiteColor);
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.footer-img-text {
+    margin : 0 50px !important
+}
+
+
+@media screen and (max-width: 768px) {
+    .footer-img-text {
+        margin: 0 !important;
+        text-align: center;
+    }
+    .footer-sitemap , .footer-connect{
+        text-align: center;
+        /* padding: 0 !important; */
+    }
+    .footer-partOne .footer-sitemap li{
+        width: 100%;
+    }
+    .footer-partOne .footer-connect div{
+        width: 70%;
+        margin:  0 auto;
+    }
+
+}
