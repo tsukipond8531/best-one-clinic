@@ -9,7 +9,7 @@ function Devices() {
 
 
     return (
-        <section className='pt-5'>
+        <section className=''>
             <div className="sectionHeader">
                 <span className='headerSpan'></span>
                 <h1 className='text-center sectionTitle'> Our Devices </h1>

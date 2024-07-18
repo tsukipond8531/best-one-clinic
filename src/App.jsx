@@ -9,6 +9,8 @@ import Offers from './Pages/Offers/Offers';
 import Devices from './Pages/Devices/Devices';
 import OfferOption from './Pages/Offers/Offer.option';
 import Products from './Pages/Products/Products';
+import Payment from './Pages/Payment/Payment';
+import Service from './Pages/Service/Service';
 
 // Import Styles
 import './App.css'
@@ -22,15 +24,17 @@ function App() {
           <Header />
           <Routes>
             <Route index path='/' element={<Home/>} />
-            <Route index path='/home' element={<Home/>} />
-            <Route index path='/about' element={<AboutUs/>} />
-            <Route index path='/contact' element={<Contact/>} />
-            <Route index path='/offers' element={<Offers/>} />
-            <Route index path='/devices' element={<Devices/>} />
+            <Route  path='/home' element={<Home/>} />
+            <Route  path='/about' element={<AboutUs/>} />
+            <Route  path='/contact' element={<Contact/>} />
+            <Route  path='/offers' element={<Offers/>} />
+            <Route  path='/devices' element={<Devices/>} />
+            <Route  path='/services' element={<Service/>} />
 
 
-            <Route index path='/offer/option/:id' element={<OfferOption/>} />
-            <Route index path='/products' element={<Products/>} />
+            <Route  path='/offer/option/:id' element={<OfferOption/>} />
+            <Route  path='/products' element={<Products/>} />
+            <Route  path='/product/payment/:id' element={<Payment/>} />
 
 
             <Route path='/login' element={<Login/>} />

@@ -13,7 +13,7 @@ function Header() {
 
     return (
         // <Navbar expand="lg" className={scrolled ? "bgColor nav-height" : "bg-body-tertiary nav-height"} fixed='top'>
-        <Navbar expand="lg" className="nav-height bg-body-tertiary">
+        <Navbar expand="lg" className="nav-height bg-body-tertiary" >
             <Container fluid>
                 <Navbar.Brand href="/home" className='brandLogo'>
                     <img src={logo} alt="logo" width={75} height={60} />
@@ -37,7 +37,7 @@ function Header() {
                             <NavLink to='/home'>Home </NavLink>
                         </Nav.Link>
                         <Nav.Link >
-                            <NavLink to='/about'>About Us </NavLink>
+                            <NavLink to='/services'>Services</NavLink>
                         </Nav.Link>
                         <Nav.Link >
                             <NavLink to='/offers'>Offers </NavLink>

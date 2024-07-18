@@ -87,7 +87,7 @@ export const PageWrapper = styled.div`
     // Page Wrapper styles
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    height: calc(100vh - 90px) !important;
     overflow: hidden;
 
     // -------- The Circle Styles -------- 
@@ -97,7 +97,7 @@ export const PageWrapper = styled.div`
         height: 2000px;
         width: 2000px;
         bottom: 0;
-        background-image: radial-gradient(circle, #dda25e, #ce9552, #c08845, #b17b39, #a36e2d);
+        background-image: radial-gradient(circle, #29445c, #436484, #436484, #29445c, #29445c);
         transition: 1.8s ease-in-out;
         border-radius: 50%;
         z-index: 6;
@@ -260,7 +260,7 @@ export const Form = styled.form`
 
     .submit-btn {
         width: 150px;
-        background-color: #DDA25E;
+        background-color: #436484;
         border: none;
         outline: none;
         height: 49px;
@@ -273,7 +273,7 @@ export const Form = styled.form`
         transition: 0.5s;
     
         &:hover {
-            background-color: #A36E2D;
+            background-color: #29445c;
         }
     
     }

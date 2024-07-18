@@ -16,7 +16,7 @@ function Offers() {
 
 
     return (
-        <section className='pt-5'>
+        <section className=''>
             <div className="sectionHeader">
                 <span className='headerSpan'></span>
                 <h1 className='text-center sectionTitle'>Our Offers </h1>
