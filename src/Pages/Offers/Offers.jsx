@@ -30,7 +30,7 @@ function Offers() {
                         {
                             offerData.map((item) => (
                                 <>
-                                    <Col lg='4' md='6' sm='10' className='offerParent mb-3' key={item.id}>
+                                    <Col lg='4 ' md='6' sm='10' className='offerParent mb-3' key={item.id}>
                                         <div className="offerItem">
                                             <img src={getImageUrl(item.img)} alt="" />
                                             <div className="offerContent">

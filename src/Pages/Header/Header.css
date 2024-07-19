@@ -141,9 +141,27 @@
 
 
 
+.translate{
+    width: 75px !important;
+    border-radius: 30px 10px !important;
+    transition: 0.5s ease;
+}
 
+.tran-en{
+    border-radius: 10px 30px !important;
+    transition: 0.5s ease;
 
+}
 
+.btn-sign {
+    text-transform: capitalize;
+    font-weight: 600;
+    border-color: #7A4F46 !important;
+    color: white;
+    margin-right: 5px ;
+    transition: 0.5s ease;
+
+}
 
 
 

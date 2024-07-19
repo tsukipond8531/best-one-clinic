@@ -18,6 +18,13 @@ body{
     font-family: "Dosis", sans-serif !important;
     font-optical-sizing: auto;
 }
+body[dir="rtl"] {
+    direction: rtl;
+}
+
+body[dir="ltr"] {
+    direction: ltr;
+}
 
 .AllParent {
     overflow: hidden;
@@ -45,6 +52,11 @@ body{
     margin: 0 30px;
     background-color: var(--HeaderColor);
 }
+.containerUser{
+    width: 90%;
+    margin: 0 auto;
+}
+
 
 /* Responsive CSS Style   */
 @media screen and (max-width: 768px) {

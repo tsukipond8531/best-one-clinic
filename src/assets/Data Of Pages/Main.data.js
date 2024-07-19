@@ -71,6 +71,15 @@ export const devicesData = [
         "Although this procedure is minimally invasive (non-surgical), it gives satisfactory results. Hydrapeel is performed using a customised instrument known as Hydrapeel, which is more like a small pen attached to a tube to deliver materials applied to the skin. This device works through a removable head that is changed at each stage of the procedure, this head works through circular movements to clean and exfoliate the skin, and then apply on the skin the skin-specific serum suitable for a specific skin problem.",
         image: "dev-6.jpg",
     },
+    {
+        id: 6,
+        title: " HydraFacial   Device",
+        text: "HydraFacial is a therapeutic technique performed by the clinic’s dermatologist that moisturises and restores the skin, narrows pores and other benefits. Hydraphil includes three steps: deeply cleansing the skin, exfoliating it, and moisturising it through serums (serum) that are applied to the skin using a dedicated device.",
+        ReadMore:
+        "Although this procedure is minimally invasive (non-surgical), it gives satisfactory results. Hydrapeel is performed using a customised instrument known as Hydrapeel, which is more like a small pen attached to a tube to deliver materials applied to the skin. This device works through a removable head that is changed at each stage of the procedure, this head works through circular movements to clean and exfoliate the skin, and then apply on the skin the skin-specific serum suitable for a specific skin problem.",
+        image: "dev-6.jpg",
+    },
+    
 ];
 
 export const offerData = [
@@ -179,56 +188,64 @@ export const serverData = [
         titleEn : "Laser (men / women) services",
         titleAr : "خدمات الليزر (رجال /سيدات ) ",
         contentEn : "",
-        contentAr : ""
+        contentAr : "",
+        image : "service-1.jpg",
     },
     {
         id : 2,
         titleEn : "Skin and body lightening services",
         titleAr : "خدمات تفتيح البشرة والجسم ",
         contentEn : "",
-        contentAr : ""
+        contentAr : "",
+        image : "service-1.jpg",
     },
     {
         id : 3,
         titleEn : "Cosmetic services (Filler-Botox)",
         titleAr : "خدمات التجميل (فيلر-بوتكس )",
         contentEn : "",
-        contentAr : ""
+        contentAr : "",
+        image : "service-1.jpg",
     },
     {
         id : 4,
         titleEn : "Freshness injection services",
         titleAr : "خدمات حقن النضارة ",
         contentEn : "",
-        contentAr : ""
+        contentAr : "",
+        image : "service-1.jpg",
     },
     {
         id : 5,
         titleEn : "Dermatological services",
         titleAr : "خدمات الجلدية ",
         contentEn : "",
-        contentAr : ""
+        contentAr : "",
+        image : "service-1.jpg",
     },
     {
         id : 6,
         titleEn : "Hair services",
         titleAr : "خدمات الشعر",
         contentEn : "",
-        contentAr : ""
+        contentAr : "",
+        image : "service-1.jpg",
     },
     {
         id : 7,
         titleEn : "Exclusive offers",
         titleAr : "عروض حصرية ",
         contentEn : "",
-        contentAr : ""
+        contentAr : "",
+        image : "service-1.jpg",
     },
     {
         id : 8,
         titleEn : "Disclosure / consultation",
         titleAr : "كشف / استشارة",
         contentEn : "",
-        contentAr : ""
+        contentAr : "",
+        image : "service-1.jpg",
     },
 ];
 

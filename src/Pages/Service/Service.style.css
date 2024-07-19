@@ -1,0 +1,31 @@
+.servicesParent{
+    width: 100%;
+}
+.serviceItem{
+}
+.serviceCard {
+    /* width: 100% !important; */
+    overflow: hidden;
+    border-radius: 50px !important;
+    transition: 0.5s ease;
+    border: 2px solid var(--mainColor) !important;    
+}
+.serviceCard:hover .serviceImg{
+    transform: scale(0.9);
+}
+.serviceImg {
+    height: 40vh !important;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+    overflow: hidden;
+
+}
+.serviceTitle{
+    font-size: 1.5rem !important;
+    text-transform: capitalize;
+    color: var(--textColor) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+
+}

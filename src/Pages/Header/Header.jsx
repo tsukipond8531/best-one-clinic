@@ -5,10 +5,18 @@ import { Container, Form, Nav, Navbar, Button } from 'react-bootstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../../public/Images/logo.png'
 import Dropdownlist from '../../Components/DropDown';
+import { useTranslation } from 'react-i18next';
+
 
 function Header() {
     // Define variables
     const navigate = useNavigate()
+    const [ , i18n] = useTranslation()
+
+    const changed = (lng) => {
+        i18n.changeLanguage(lng);
+        document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
+    };
 
 
     return (
@@ -56,25 +64,27 @@ function Header() {
 
 
                     <Form className="d-flex formStyle">
-                        <Form.Control
-                            type="search"
-                            placeholder="Search"
-                            className="me-2 seacrhStyle"
-                            aria-label="Search"
-                        />
-                        <Button
-                            variant="outline-success"
-                            className='me-2 btnSearch'
-                        >
-                            Search
-                        </Button>
+
+
                         <Button
                             variant="outline-secondary"
                             onClick={() => navigate('/login')}
-                            className='btnLogin'
+                            className='btnLogin me-2'
                         >
                             Login
                         </Button>
+
+                        {
+                            i18n.language !== 'ar' && (
+                                <Button variant="me-2 btnLogin translate" onClick={() => changed('ar')}>Ar</Button>
+                            )
+                        }
+
+                        {
+                            i18n.language !== 'en' && (
+                                <Button variant="me-2 btnLogin translate tran-en" onClick={() => changed('en')}>En</Button>
+                            )
+                        }
                     </Form>
                 </Navbar.Collapse>
             </Container>
@@ -85,13 +95,15 @@ function Header() {
 
 export default Header
 
-{/* <NavDropdown title="Contact Us" id="navbarScrollingDropdown" className='linksBlockDrop'>
-                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">
-                            Another action
-                        </NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action5">
-                            Something else here
-                        </NavDropdown.Item>
-                    </NavDropdown> */}
+{/* <Form.Control
+                            type="search"
+                            placeholder="Search"
+                            className="me-2 seacrhStyle"
+                            aria-label="Search"
+                        />
+                        <Button
+                            variant="outline-success"
+                            className='me-2 btnSearch'
+                        >
+                            Search
+                        </Button> */}

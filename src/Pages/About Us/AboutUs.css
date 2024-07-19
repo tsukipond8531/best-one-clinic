@@ -39,10 +39,6 @@
     display: block;
     margin: 0 auto;
 }
-.containerUser{
-    width: 90%;
-    margin: 0 auto;
-}
 
 /* Responsive CSS Style   */
 @media screen and (max-width: 768px) {
