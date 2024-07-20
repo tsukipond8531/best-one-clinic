@@ -4,15 +4,21 @@ import { Col, Row } from 'react-bootstrap'
 import aboutImg from '../../../public/Images/9082599.jpg'
 import './AboutUs.css'
 import { ImQuotesLeft } from "react-icons/im";
-function AboutUs() {
+import { ImQuotesRight } from "react-icons/im";
 
+import { useTranslation } from 'react-i18next';
+
+
+
+function AboutUs() {
+    const { t , i18n} = useTranslation()
 
     return (
         <section className='pt-5'>
 
             <div className="sectionHeader">
                 <span className='headerSpan'></span>
-                <h1 className='text-center sectionTitle'>About Us </h1>
+                <h1 className='text-center sectionTitle'> {t('aboutUs')} </h1>
                 <span className='headerSpan'></span>
             </div>
 
@@ -21,11 +27,16 @@ function AboutUs() {
                 <div className='containerUser'>
                     <Row >
                         <Col lg='6' md='12' sm='12' className='aboutContent-data'>
-                            <span> <ImQuotesLeft />  </span>
-                            <h1>Best One Clinic </h1>
-                            <p>The best medical beauty clinic offers everything related to the field of dermatology, beauty and laser to serve the honourable people of Jeddah                                </p>
+                            {
+                                i18n.language==='en' && <span> <ImQuotesLeft />  </span>
+                            }
+                            {
+                                i18n.language==='ar' && <span> <ImQuotesRight />  </span>
+                            }
+                            <h1> {t('aboutTitle')} </h1>
+                            <p> {t('aboutText')} </p>
                             <p>
-                                Better Beauty Clinic includes a distinguished group of consultants and specialists who have the highest international certificates to meet the needs of customers exceptionally so that they are fully satisfied with the quality of services and distinctive prices
+                                {t('aboutText2')}
                             </p>
                         </Col>
 

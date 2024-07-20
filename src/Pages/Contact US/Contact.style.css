@@ -1,0 +1,61 @@
+.contactParent{
+    width: 100%;
+    /* background-color: aqua; */
+}
+
+.groupParent{
+    /* background-color: aliceblue; */
+    /* height: 80px; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+
+.inputData{
+    overflow: hidden;
+    width: 100%;
+    height: 55px;
+    background-color: #eee !important;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+}
+.inputLabel{
+    margin: 0  15px;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    transition: 0.5s ease-in-out;
+    color: var(--fontColor) !important;
+
+
+}
+
+.inputData .inputIcon{
+    margin-left: 20px !important;
+    font-size: 1.2rem ;
+    color: var(--fontColor) !important;
+}
+
+.inputData .inputField , .txtArea{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    /* background-color: none !important; */
+    background-color: transparent !important;
+
+}
+.txtArea{
+    background-color: #eee !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+}
+.btnSend{
+    background-color: var(--bgColor) !important;
+    width: 200px !important;
+    color: #eee !important;
+    text-align: center;
+    margin: 0 auto !important;
+}

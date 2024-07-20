@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 function Header() {
     // Define variables
     const navigate = useNavigate()
-    const [ , i18n] = useTranslation()
+    const [ t, i18n] = useTranslation()
 
     const changed = (lng) => {
         i18n.changeLanguage(lng);
@@ -42,16 +42,16 @@ function Header() {
                         navbarScroll
                     >
                         <Nav.Link >
-                            <NavLink to='/home'>Home </NavLink>
+                            <NavLink to='/home'> {t('Home')} </NavLink>
                         </Nav.Link>
                         <Nav.Link >
-                            <NavLink to='/services'>Services</NavLink>
+                            <NavLink to='/services'>{ t('services')}</NavLink>
                         </Nav.Link>
                         <Nav.Link >
-                            <NavLink to='/offers'>Offers </NavLink>
+                            <NavLink to='/offers'> { t('Offers')} </NavLink>
                         </Nav.Link>
                         <Nav.Link >
-                            <NavLink to='/devices'>Devices </NavLink>
+                            <NavLink to='/devices'> { t('Devices')} </NavLink>
                         </Nav.Link>
 
                         {/* Start Dropdown */}
@@ -76,13 +76,13 @@ function Header() {
 
                         {
                             i18n.language !== 'ar' && (
-                                <Button variant="me-2 btnLogin translate" onClick={() => changed('ar')}>Ar</Button>
+                                <Button variant="me-2 btnLogin translate" onClick={() => changed('ar')}>Arabic</Button>
                             )
                         }
 
                         {
                             i18n.language !== 'en' && (
-                                <Button variant="me-2 btnLogin translate tran-en" onClick={() => changed('en')}>En</Button>
+                                <Button variant="me-2 btnLogin translate tran-en" onClick={() => changed('en')}>English</Button>
                             )
                         }
                     </Form>

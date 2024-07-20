@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer'
 import { useTranslation } from 'react-i18next'
 function Service() {
 
-    const {i18n} = useTranslation()
+    const { t, i18n} = useTranslation()
 
 
     return (
@@ -15,7 +15,7 @@ function Service() {
             
             <div className="sectionHeader">
                 <span className='headerSpan'></span>
-                <h1 className='text-center sectionTitle'>Our Services </h1>
+                <h1 className='text-center sectionTitle'> { t('OurServices')} </h1>
                 <span className='headerSpan'></span>
             </div>
 
@@ -41,6 +41,7 @@ function Service() {
                                 </>
                             ))
                         }
+
                         {/* Arabic Content */}
 
                         { i18n.language==='ar' &&

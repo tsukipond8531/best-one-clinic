@@ -7,7 +7,9 @@ import { MdMarkEmailRead } from "react-icons/md";
 import { PiSubtitlesFill } from "react-icons/pi";
 // import { RiMessage2Fill } from "react-icons/ri";
 import Footer from '../Footer/Footer';
-function Contact() {
+
+
+function Complaints() {
     const { t, i18n } = useTranslation()
 
 
@@ -21,7 +23,7 @@ function Contact() {
 
             <div className="sectionHeader">
                 <span className='headerSpan'></span>
-                <h1 className='text-center sectionTitle'>{t('Contact')} </h1>
+                <h1 className='text-center sectionTitle'>{t('Complaints')} </h1>
                 <span className='headerSpan'></span>
             </div>
 
@@ -93,7 +95,7 @@ function Contact() {
                             </Col>
                             <Col lg='6' md='6' sm='10' className='inputParent'>
                                 <Form.Group className="mb-3 groupParent" >
-                                    <Form.Label className='inputLabel'> {t('YourSubject')} </Form.Label>
+                                    <Form.Label className='inputLabel'> {t('serviceComlaint')} </Form.Label>
                                     <div className="inputData">
                                         {
                                             i18n.language == 'en' &&
@@ -105,7 +107,7 @@ function Contact() {
                                         }
                                         <Form.Control
                                             type="text"
-                                            placeholder={t('placeholderSubject')}
+                                            placeholder={t('placeholderSerComplaint')}
                                             className='inputField'
                                         />
                                     </div>
@@ -113,11 +115,11 @@ function Contact() {
                             </Col>
                             <Col lg='12' md='6' sm='10' className='inputParent'>
                                 <Form.Group className="mb-3 groupParent" >
-                                    <Form.Label className='inputLabel'> {t('YourMessage')}</Form.Label>
+                                    <Form.Label className='inputLabel'> {t('YourComplaints')}</Form.Label>
                                     <Form.Control
                                         as="textarea"
                                         rows={5}
-                                        placeholder={t('placeholderMsg')}
+                                        placeholder={t('placeholderComplaint')}
                                         className='txtArea'
                                     />
                                 </Form.Group>
@@ -146,4 +148,5 @@ function Contact() {
     )
 }
 
-export default Contact
+export default Complaints
+

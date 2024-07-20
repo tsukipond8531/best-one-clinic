@@ -11,6 +11,7 @@ import OfferOption from './Pages/Offers/Offer.option';
 import Products from './Pages/Products/Products';
 import Payment from './Pages/Payment/Payment';
 import Service from './Pages/Service/Service';
+import Complaints from './Pages/Contact US/Complaints';
 
 // Import Styles
 import './App.css'
@@ -27,6 +28,7 @@ function App() {
             <Route  path='/home' element={<Home/>} />
             <Route  path='/about' element={<AboutUs/>} />
             <Route  path='/contact' element={<Contact/>} />
+            <Route  path='/complaints' element={<Complaints/>} />
             <Route  path='/offers' element={<Offers/>} />
             <Route  path='/devices' element={<Devices/>} />
             <Route  path='/services' element={<Service/>} />
