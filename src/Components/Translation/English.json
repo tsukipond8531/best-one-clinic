@@ -29,5 +29,10 @@
     "placeholderSubject": "Enter Your Subject",
     "placeholderComplaint": "Enter Your Complaint",
     "placeholderMsg" : "Enter your message",
-    "placeholderSerComplaint" : "Enter Your Service Type"
+    "placeholderSerComplaint" : "Enter Your Service Type",
+    "showOffer" : "Show Offers",
+    "Login" : "Login",
+    "TermsandConditions" : "Terms and Conditions",
+    "Sitemap" : "Sitemap",
+    "Connect" : "Connect"
 }

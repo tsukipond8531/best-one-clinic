@@ -53,7 +53,6 @@
 
 /* *********************************** Start Style *************************************** */
 .nav-height {
-    direction: ltr !important;
     height: 90px !important;
     width: 100% !important;
     position: fixed;
@@ -111,6 +110,9 @@
     background-color: var(--HeaderColor) !important;
 } */
 
+#dropdown-basic{
+    width: 230px !important;
+}
 
 .seacrhStyle {
     box-shadow: none !important;

@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 function Header() {
     // Define variables
     const navigate = useNavigate()
-    const [ t, i18n] = useTranslation()
+    const [t, i18n] = useTranslation()
 
     const changed = (lng) => {
         i18n.changeLanguage(lng);
@@ -21,7 +21,15 @@ function Header() {
 
     return (
         // <Navbar expand="lg" className={scrolled ? "bgColor nav-height" : "bg-body-tertiary nav-height"} fixed='top'>
-        <Navbar expand="lg" className="nav-height bg-body-tertiary" >
+        <Navbar
+            expand="lg"
+            className={
+                i18n.language==='ar' ? "nav-height bg-body-tertiary dirRtL": "nav-height bg-body-tertiary dirLtR"
+            }
+
+        >
+
+
             <Container fluid>
                 <Navbar.Brand href="/home" className='brandLogo'>
                     <img src={logo} alt="logo" width={75} height={60} />
@@ -35,9 +43,15 @@ function Header() {
                 </button>
 
 
-                <Navbar.Collapse id="navbarScroll" className='nav-small'>
+                <Navbar.Collapse
+                    id="navbarScroll"
+                    className='nav-small'
+
+                >
                     <Nav
-                        className="me-auto my-2 my-lg-0 linksBlock"
+                        className={
+                            i18n.language === 'ar' ? "me-auto my-2 my-lg-0 linksBlock dirRtL" : "me-auto my-2 my-lg-0 linksBlock dirLtR"
+                        }
                         // style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
@@ -45,13 +59,13 @@ function Header() {
                             <NavLink to='/home'> {t('Home')} </NavLink>
                         </Nav.Link>
                         <Nav.Link >
-                            <NavLink to='/services'>{ t('services')}</NavLink>
+                            <NavLink to='/services'>{t('services')}</NavLink>
                         </Nav.Link>
                         <Nav.Link >
-                            <NavLink to='/offers'> { t('Offers')} </NavLink>
+                            <NavLink to='/offers'> {t('Offers')} </NavLink>
                         </Nav.Link>
                         <Nav.Link >
-                            <NavLink to='/devices'> { t('Devices')} </NavLink>
+                            <NavLink to='/devices'> {t('Devices')} </NavLink>
                         </Nav.Link>
 
                         {/* Start Dropdown */}
@@ -69,14 +83,14 @@ function Header() {
                         <Button
                             variant="outline-secondary"
                             onClick={() => navigate('/login')}
-                            className='btnLogin me-2'
+                            className='btnLogin me-2 ms-2'
                         >
-                            Login
+                            {t('Login')}
                         </Button>
 
                         {
                             i18n.language !== 'ar' && (
-                                <Button variant="me-2 btnLogin translate" onClick={() => changed('ar')}>Arabic</Button>
+                                <Button variant="me-2  btnLogin translate" onClick={() => changed('ar')}>Arabic</Button>
                             )
                         }
 

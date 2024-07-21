@@ -3,6 +3,7 @@
     height: auto ;
     width: 100%;
     overflow: hidden;
+    direction: ltr !important;
     
 }
 .footer-partOne{
@@ -13,7 +14,7 @@
 }
 .footer-partOne .footer-img img{
     display: block;
-    margin:  0 auto;
+    margin:  0  auto;
 }
 .footer-partOne p{
     padding: 10px;
@@ -22,6 +23,11 @@
     letter-spacing: 1px;
     text-align: center;
 }
+.footer-sitemap{
+    width: 50% ;
+    margin: 0 auto;
+}
+
 .footer-partOne .footer-sitemap , .footer-partOne .footer-connect { 
     padding: 25px ;
     transition: all 1s !important;
@@ -30,23 +36,31 @@
 .footer-connect h3 , .footer-sitemap h3 {
     font-size: 2.2rem;
     letter-spacing: 2px !important;
+    text-align: center;
 }
 .footer-partOne .footer-sitemap ul{
     display: block;
     list-style: none;
-    padding: 15px;
+    padding: 15px 0;
     line-height: 35px;
     font-size: 20px;
     cursor: pointer;
     font-weight: 500;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
 }
 
 .footer-partOne .footer-sitemap li{
     width: 200px;
+    text-align: center !important;
 }
 .footer-partOne .footer-sitemap li:hover{
     color: var(--mainColor);
 
+}
+.sitemapParent{
+    margin: 0 auto !important;
 }
 
 .footer-partOne .footer-connect .socailIcons{
@@ -58,6 +72,8 @@
     align-items: center;
     cursor: pointer;
     /* background-color: antiquewhite; */
+    margin: 0 auto;
+    padding: 10px;
 }
 .socialIcon{
     width: 60px;
@@ -107,12 +123,18 @@
         text-align: center;
         /* padding: 0 !important; */
     }
+    .footer-sitemap{
+        width: 100%;
+    }
     .footer-partOne .footer-sitemap li{
         width: 100%;
     }
     .footer-partOne .footer-connect div{
         width: 70%;
         margin:  0 auto;
+    }
+    .socailIcons{
+        width: 100% !important;
     }
 
 }

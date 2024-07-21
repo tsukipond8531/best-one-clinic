@@ -21,7 +21,6 @@ export const mainData = [
     bg: "bg-3.jpg",
   },
 ];
-
 export const devicesData = [
     {
         id: 1,
@@ -114,102 +113,163 @@ export const devicesData = [
 export const offerData = [
   {
     id: "1",
-    title: "Dental offers",
+    titleEN: "Laser (Men / Women) offers",
+    titleAr :"عروض الليزر (رجال /سيدات )",
     img: "off-1.jpg",
+    offerDetails : [
+      {
+        id : 1,
+        titleEn :"Laser Offer ( Females )",
+        titleAr : "عروص الليزر سيدات",
+        descriptionEn : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aut!",
+        descriptionAr : "تفاصيل العرض المتاح للخدمه بربلانتبرمتلاستلاس",
+        image : "optionLaser1.jpg",
+        price : 230
+      },
+      {
+        id : 2,
+        titleEn :"Laser Offer ( Females )",
+        titleAr : "عروص الليزر سيدات",
+        descriptionEn : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aut!",
+        descriptionAr : "تفاصيل العرض المتاح للخدمه بربلانتبرمتلاستلاس",
+        image : "optionLaser1.jpg",
+        price : 230
+      },
+      {
+        id : 3,
+        titleEn :"Laser Offer ( Females )",
+        titleAr : "عروص الليزر سيدات",
+        descriptionEn : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aut!",
+        descriptionAr : "تفاصيل العرض المتاح للخدمه بربلانتبرمتلاستلاس",
+        image : "optionLaser1.jpg",
+        price : 230
+      },
+      {
+        id : 4,
+        titleEn :"Laser Offer ( Females )",
+        titleAr : "عروص الليزر سيدات",
+        descriptionEn : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aut!",
+        descriptionAr : "تفاصيل العرض المتاح للخدمه بربلانتبرمتلاستلاس",
+        image : "optionLaser1.jpg",
+        price : 230
+      },
+    ]
   },
   {
     id: "2",
-    title: "Dental offers",
+    titleEN: "Skin And Body Lightening offers",
+    titleAr :"عروض تفتيح البشرة والجسم",
     img: "off-1.jpg",
+    offerDetails : [
+      {
+        id : 1,
+        titleEn :"",
+        titleAr : "",
+        descriptionEn : "",
+        descriptionAr : "",
+        image : "",
+      }
+    ]
   },
   {
     id: 3,
-    title: "Dental offers",
+    titleEN: "Cosmetic (Filler-Botox) offers",
+    titleAr :"عروض التجميل (فيلر-بوتكس )",
     img: "off-1.jpg",
+    offerDetails : [
+      {
+        id : 1,
+        titleEn :"",
+        titleAr : "",
+        descriptionEn : "",
+        descriptionAr : "",
+        image : "",
+      }
+    ]
   },
   {
     id: 4,
-    title: "Dental offers",
+    titleEN: "Freshness Injection offers",
+    titleAr :"عروض حقن النضارة",
     img: "off-1.jpg",
+    offerDetails : [
+      {
+        id : 1,
+        titleEn :"",
+        titleAr : "",
+        descriptionEn : "",
+        descriptionAr : "",
+        image : "",
+      }
+    ]
   },
   {
     id: 5,
-    title: "Dental offers",
+    titleEN: "Dermatological offers",
+    titleAr :"عروض الجلدية",
     img: "off-1.jpg",
+    offerDetails : [
+      {
+        id : 1,
+        titleEn :"",
+        titleAr : "",
+        descriptionEn : "",
+        descriptionAr : "",
+        image : "",
+      }
+    ]
   },
   {
     id: 6,
-    title: "Dental offers",
+    titleEN: "Hair  offers",
+    titleAr :"عروض الشعر",
     img: "off-1.jpg",
+    offerDetails : [
+      {
+        id : 1,
+        titleEn :"",
+        titleAr : "",
+        descriptionEn : "",
+        descriptionAr : "",
+        image : "",
+      }
+    ]
   },
   {
     id: 7,
-    title: "Dental offers",
+    titleEN: "Exclusive  offers",
+    titleAr :"عروض حصرية ",
     img: "off-1.jpg",
+    offerDetails : [
+      {
+        id : 1,
+        titleEn :"",
+        titleAr : "",
+        descriptionEn : "",
+        descriptionAr : "",
+        image : "",
+      }
+    ]
   },
   {
     id: 8,
-    title: "Dental offers",
+    titleEN: "Disclosure / Consultation ",
+    titleAr :"كشف / استشارة",
     img: "off-1.jpg",
+    offerDetails : [
+      {
+        id : 1,
+        titleEn :"",
+        titleAr : "",
+        descriptionEn : "",
+        descriptionAr : "",
+        image : "",
+      }
+    ]
   },
 ];
 
-export const productData = [
-  {
-    id: 1,
-    productTitle: "SkinMedica",
-    productPrice: 235,
-    description:
-      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
-    productImageOne: "product-1.jpg",
-    productImageTwo: "product-11.jpg",
-  },
-  {
-    id: 2,
-    productTitle: "SkinMedica",
-    productPrice: 235,
-    description:
-      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
-    productImageOne: "product-1.jpg",
-    productImageTwo: "product-11.jpg",
-  },
-  {
-    id: 3,
-    productTitle: "SkinMedica",
-    productPrice: 235,
-    description:
-      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
-    productImageOne: "product-1.jpg",
-    productImageTwo: "product-11.jpg",
-  },
-  {
-    id: 4,
-    productTitle: "SkinMedica",
-    productPrice: 235,
-    description:
-      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
-    productImageOne: "product-1.jpg",
-    productImageTwo: "product-11.jpg",
-  },
-  {
-    id: 5,
-    productTitle: "SkinMedica",
-    productPrice: 235,
-    description:
-      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
-    productImageOne: "product-1.jpg",
-    productImageTwo: "product-11.jpg",
-  },
-  {
-    id: 6,
-    productTitle: "SkinMedica",
-    productPrice: 235,
-    description:
-      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
-    productImageOne: "product-1.jpg",
-    productImageTwo: "product-11.jpg",
-  },
-];
+
 
 export const serverData = [
   {
@@ -281,3 +341,60 @@ export const serverData = [
 export function getImageUrl(imageName) {
     return new URL(`../../../public/Images/${imageName}`, import.meta.url).href;
 }
+
+export const productData = [
+  {
+    id: 1,
+    productTitle: "SkinMedica",
+    productPrice: 235,
+    description:
+      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
+    productImageOne: "product-1.jpg",
+    productImageTwo: "product-11.jpg",
+  },
+  {
+    id: 2,
+    productTitle: "SkinMedica",
+    productPrice: 235,
+    description:
+      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
+    productImageOne: "product-1.jpg",
+    productImageTwo: "product-11.jpg",
+  },
+  {
+    id: 3,
+    productTitle: "SkinMedica",
+    productPrice: 235,
+    description:
+      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
+    productImageOne: "product-1.jpg",
+    productImageTwo: "product-11.jpg",
+  },
+  {
+    id: 4,
+    productTitle: "SkinMedica",
+    productPrice: 235,
+    description:
+      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
+    productImageOne: "product-1.jpg",
+    productImageTwo: "product-11.jpg",
+  },
+  {
+    id: 5,
+    productTitle: "SkinMedica",
+    productPrice: 235,
+    description:
+      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
+    productImageOne: "product-1.jpg",
+    productImageTwo: "product-11.jpg",
+  },
+  {
+    id: 6,
+    productTitle: "SkinMedica",
+    productPrice: 235,
+    description:
+      "SkinMedica TNS Advanced+ Serum - Our Premium Facial Skin Care Product, the Secret to Flawless Skin. Age-Defying Face Serum for Women is Proven to Address Wrinkles and Fine Lines for",
+    productImageOne: "product-1.jpg",
+    productImageTwo: "product-11.jpg",
+  },
+];

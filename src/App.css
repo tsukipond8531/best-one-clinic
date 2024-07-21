@@ -25,6 +25,12 @@ body[dir="rtl"] {
 body[dir="ltr"] {
     direction: ltr;
 }
+.dirLtR {
+    direction: ltr !important;
+}
+.dirRtL {
+    direction: rtl !important;
+}
 
 .AllParent {
     overflow: hidden;
@@ -45,6 +51,7 @@ body[dir="ltr"] {
     font-weight: 700;
     font-size: 3.5rem;
     color: var(--HeaderColor);
+    text-transform: capitalize;
 }
 .headerSpan{
     width: 200px ;
