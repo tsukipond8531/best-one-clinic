@@ -1,4 +1,5 @@
 .devCard{
+    min-height: 59vh !important;
     width: 100%;
     border-radius: 30px  60px !important; 
     transition: 0.5s ease !important;
@@ -7,11 +8,11 @@
     border-width:2px !important;
 }
 .devCard:hover .devImages{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .devImages{
-    height: 30vh;
+    height: 35vh;
     width: 100%;
     object-fit: contain;
     transition: 0.5s ease;
@@ -26,10 +27,10 @@
     letter-spacing: 1px !important;
     font-size: 1.6rem !important;
     font-weight: 700 !important;
-    color: var(--text2Color) !important;
+    color: var(--HeaderColor) !important;
 }
 .dev-text{
-    font-size: .9rem !important;
-    color: var(--textColor) !important;
+    font-size: 1rem !important;
+    color: var(--HeaderColor) !important;
     font-weight: 500;
 }

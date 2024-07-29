@@ -86,6 +86,9 @@
     transition: all 0.5s ease;
     width: 80%;
 }
+.linksBlockAr{
+    margin-left: 100px !important;
+}
 .linksBlock a a {
     margin-right: 30px !important;
 }
@@ -96,7 +99,7 @@
     font-weight: 600 !important;
     color: var(--fontColor) !important;
     transition: 0.5s ease;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
     text-transform: capitalize;
 }
 
@@ -136,7 +139,7 @@
     border-color: var(--HeaderColor) !important;
     color: var(--HeaderColor) !important;
     font-size: 1.1rem !important;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
 }
 
 .btnLogin:hover,

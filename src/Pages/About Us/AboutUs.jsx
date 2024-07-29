@@ -38,9 +38,6 @@ function AboutUs() {
                             }
                             <h1> {t('aboutTitle')} </h1>
                             <p> {t('aboutText')} </p>
-                            <p>
-                                {t('aboutText2')}
-                            </p>
                         </Col>
 
                         <Col lg='6' md='12' sm='12' className=' aboutContent-image'>

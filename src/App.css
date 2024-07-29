@@ -1,23 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
-*{
-    margin: 0 ;
+
+@import url('https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
-    --mainColor : #f6c6c6;
-    --fontColor : #29445c;
-    --bgColor : #436484;
-    --HeaderColor : #232c3b;
-    --HeaderText : #DDD8FF;
-    --whiteColor : #ffffff;
-    --textColor  : #20108F;
-    --text2Color : #0D0066;
+    --mainColor: #f6c6c6;
+    --fontColor: #29445c;
+    --bgColor: #436484;
+    --HeaderColor: #232c3b;
+    --HeaderText: #DDD8FF;
+    --whiteColor: #ffffff;
+    --textColor: #20108F;
+    --text2Color: #0D0066;
+    --main2Color : #be5858;
+
 }
-body{
-    font-family: "Dosis", sans-serif !important;
-    font-optical-sizing: auto;
+
+body {
+    font-family: "Zain", sans-serif !important; 
+    font-style: normal !important;
 }
+
 /* body[dir="rtl"] {
     direction: rtl;
 }
@@ -25,9 +32,11 @@ body{
 body[dir="ltr"] {
     direction: ltr;
 } */
+
 .dirLtR {
     direction: ltr !important;
 }
+
 .dirRtL {
     direction: rtl !important;
 }
@@ -36,7 +45,8 @@ body[dir="ltr"] {
     overflow: hidden;
     padding-top: 90px !important;
 }
-.sectionHeader{
+
+.sectionHeader {
     width: 100%;
     height: 120px;
     /* background-color: #436484; */
@@ -44,22 +54,25 @@ body[dir="ltr"] {
     padding: 15px !important;
     display: flex;
     align-items: center !important;
-    justify-content : center ;
+    justify-content: center;
 }
-.sectionTitle{
-    letter-spacing: 2px;
+
+.sectionTitle {
+    /* letter-spacing: 2px; */
     font-weight: 700;
     font-size: 3.5rem;
-    color: var(--HeaderColor);
+    color: var(--main2Color);
     text-transform: capitalize;
 }
-.headerSpan{
-    width: 200px ;
+
+.headerSpan {
+    width: 200px;
     height: 3px;
     margin: 0 30px;
-    background-color: var(--HeaderColor);
+    background-color: var(--main2Color);
 }
-.containerUser{
+
+.containerUser {
     width: 90%;
     margin: 0 auto;
 }
@@ -67,14 +80,16 @@ body[dir="ltr"] {
 
 /* Responsive CSS Style   */
 @media screen and (max-width: 768px) {
-    .sectionHeader{
+    .sectionHeader {
         justify-content: space-evenly !important;
     }
-    .sectionTitle{
+
+    .sectionTitle {
         width: 600px !important;
         font-size: 2.2rem;
     }
-    .headerSpan{
+
+    .headerSpan {
         width: 100px;
     }
 }

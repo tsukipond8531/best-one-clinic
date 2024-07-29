@@ -18,7 +18,11 @@ function OfferOption() {
 
 
     return (
-        <section >
+        <section
+            className={
+                i18n.language=='en' ? "dirLtR" : "dirRtL"
+            }
+        >
 
             <div className="sectionHeader">
                 <span className='headerSpan'></span>

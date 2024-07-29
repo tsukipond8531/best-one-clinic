@@ -32,7 +32,7 @@ function Service() {
                         {i18n.language === 'en' &&
                             serverData.map((item) => (
                                 <>
-                                    <Col lg='3' md='6' sm='10' className='serviceItem mb-3' key={item.id}>
+                                    <Col lg='4' md='6' sm='10' className='serviceItem mb-4' key={item.id}>
                                         <Card className='serviceCard'>
                                             <Card.Img src={getImageUrl(item.image)} className='serviceImg' />
 
@@ -60,7 +60,7 @@ function Service() {
                         {i18n.language === 'ar' &&
                             serverData.map((item) => (
                                 <>
-                                    <Col lg='3' md='6' sm='10' className='serviceItem mb-3' key={item.id}>
+                                    <Col lg='4' md='6' sm='10' className='serviceItem mb-4' key={item.id}>
                                         <Card className='serviceCard'>
                                             <Card.Img src={getImageUrl(item.image)} className='serviceImg' />
 

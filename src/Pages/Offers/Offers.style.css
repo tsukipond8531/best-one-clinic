@@ -73,7 +73,7 @@
 }
 .optionItem .card{
     overflow: hidden !important;
-    border: 2px solid var(--fontColor) !important;
+    border: 2px solid var(--mainColor) !important;
     border-radius: 50px !important;
 }
 .optionItem .optionImage{

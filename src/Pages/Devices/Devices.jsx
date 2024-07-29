@@ -10,10 +10,15 @@ import { useTranslation } from 'react-i18next'
 
 function Devices() {
 
-    const {t , i18n} = useTranslation()
+    const { t, i18n } = useTranslation()
 
     return (
-        <section className=''>
+        <section
+
+            className={
+                i18n.language=='en' ? "dirLtR" : "dirRtL"
+            }
+        >
             <div className="sectionHeader">
                 <span className='headerSpan'></span>
                 <h1 className='text-center sectionTitle'> {t('OurDevices')} </h1>
@@ -24,7 +29,7 @@ function Devices() {
             <Container>
                 <Row>
                     {/* Start English Content */}
-                    { i18n.language ==='en' &&
+                    {i18n.language === 'en' &&
                         devicesData.map((item) => (
                             <>
                                 <Col lg='4' md='6' sm='10' className='mb-3 m-auto '>
@@ -45,7 +50,7 @@ function Devices() {
                     }
 
                     {/* Start Arabic Content */}
-                    { i18n.language ==='ar' &&
+                    {i18n.language === 'ar' &&
                         devicesData.map((item) => (
                             <>
                                 <Col lg='4' md='6' sm='10' className='mb-4 m-auto '>

@@ -6,7 +6,6 @@ import { FaUser, FaPhoneAlt } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 import { PiSubtitlesFill } from "react-icons/pi";
 // import { RiMessage2Fill } from "react-icons/ri";
-import Footer from '../Footer/Footer';
 
 
 function Complaints() {
@@ -144,9 +143,6 @@ function Complaints() {
             {/* </div> */}
             {/* End Contact Us Section */}
 
-            {/* Start Footer Section */}
-            <Footer />
-            {/* End Footer Section */}
 
         </section>
     )

@@ -50,9 +50,8 @@ function Header() {
                 >
                     <Nav
                         className={
-                            i18n.language === 'ar' ? "me-auto my-2 my-lg-0 linksBlock dirRtL" : "me-auto my-2 my-lg-0 linksBlock dirLtR"
+                            i18n.language === 'ar' ? "me-auto my-2 my-lg-0 linksBlock dirRtL linksBlockAr" : "me-auto my-2 my-lg-0 linksBlock dirLtR"
                         }
-                        // style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
                         <Nav.Link >
