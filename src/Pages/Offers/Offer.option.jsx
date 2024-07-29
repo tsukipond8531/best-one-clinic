@@ -1,7 +1,6 @@
 import { } from 'react'
 import { useParams } from 'react-router-dom'
 import { offerData } from '../../assets/Data Of Pages/Main.data'
-import Footer from '../Footer/Footer';
 import { useTranslation } from 'react-i18next';
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import './Offers.style.css'
@@ -113,9 +112,6 @@ function OfferOption() {
             </div>
 
 
-            {/* Start Footer */}
-            <Footer />
-            {/* End Footer */}
         </section>
     )
 }
