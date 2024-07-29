@@ -6,7 +6,8 @@ import { FaUser, FaPhoneAlt } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 import { PiSubtitlesFill } from "react-icons/pi";
 // import { RiMessage2Fill } from "react-icons/ri";
-import Footer from '../Footer/Footer';
+
+
 function Contact() {
     const { t, i18n } = useTranslation()
 
@@ -17,7 +18,11 @@ function Contact() {
     }
 
     return (
-        <section className=''>
+        <section 
+            className={
+                i18n.language=='en' ? "dirLtR" : "dirRtL"
+            }
+        >
 
             <div className="sectionHeader">
                 <span className='headerSpan'></span>
@@ -138,9 +143,6 @@ function Contact() {
             {/* </div> */}
             {/* End Contact Us Section */}
 
-            {/* Start Footer Section */}
-            <Footer />
-            {/* End Footer Section */}
 
         </section>
     )

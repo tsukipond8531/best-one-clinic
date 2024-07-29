@@ -1,4 +1,8 @@
-
+.offerParent{
+    /* background-color: aqua !important; */
+    padding: 15px;
+    margin: 0 auto;
+}
 .offerItem{
     margin: 0 auto;
     width: 350px;
@@ -14,7 +18,7 @@
 .offerItem img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: fill;
 }
 .offerItem .offerContent{
     width: 100%;
@@ -73,9 +77,9 @@
     border-radius: 50px !important;
 }
 .optionItem .optionImage{
-    height: 35vh !important;
+    height: auto !important;
     width: 100% !important;
-    object-fit: fill;
+    object-fit: cover;
 }
 .optionItem .optionTitle{
     font-size: 1.8rem !important;

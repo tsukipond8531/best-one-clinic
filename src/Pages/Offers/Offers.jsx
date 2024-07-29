@@ -6,7 +6,6 @@ import { Col, Row } from 'react-bootstrap'
 
 import { getImageUrl, offerData } from '../../assets/Data Of Pages/Main.data'
 import { useNavigate } from 'react-router-dom'
-import Footer from '../Footer/Footer'
 import { useTranslation } from 'react-i18next'
 function Offers() {
 
@@ -19,7 +18,11 @@ function Offers() {
 
 
     return (
-        <section className=''>
+        <section 
+            className={
+                i18n.language=='en' ? "dirLtR" : "dirRtL"
+            }
+        >
 
             <div className="sectionHeader">
                 <span className='headerSpan'></span>
@@ -34,7 +37,7 @@ function Offers() {
                         { i18n.language=='en' &&
                             offerData.map((item) => (
                                 <>
-                                    <Col lg='3 ' md='6' sm='10' className='offerParent mb-3 ' key={item.id}>
+                                    <Col lg='4' md='6' sm='10' className='offerParent mb-3 ' key={item.id}>
                                         <div className="offerItem">
                                             <img src={getImageUrl(item.img)} alt="" />
                                             <div className="offerContent">
@@ -56,7 +59,7 @@ function Offers() {
                         { i18n.language=='ar' &&
                             offerData.map((item) => (
                                 <>
-                                    <Col lg='3 ' md='6' sm='10' className='offerParent mb-3 ' key={item.id}>
+                                    <Col lg='4' md='6' sm='10' className='offerParent mb-3 ' key={item.id}>
                                         <div className="offerItem">
                                             <img src={getImageUrl(item.img)} alt="" />
                                             <div className="offerContent">
@@ -79,9 +82,7 @@ function Offers() {
             </section>
 
 
-            {/* Start Footer */}
-            <Footer/>
-            {/* End Footer */}
+            
         </section>
     )
 }

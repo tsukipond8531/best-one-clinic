@@ -120,7 +120,7 @@ export const offerData = [
       {
         id : 1,
         titleEn :"Laser Offer ( Females )",
-        titleAr : "عروص الليزر سيدات",
+        titleAr : "عروض الليزر سيدات",
         descriptionEn : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aut!",
         descriptionAr : "تفاصيل العرض المتاح للخدمه بربلانتبرمتلاستلاس",
         image : "optionLaser1.jpg",
@@ -129,7 +129,7 @@ export const offerData = [
       {
         id : 2,
         titleEn :"Laser Offer ( Females )",
-        titleAr : "عروص الليزر سيدات",
+        titleAr : "عروض الليزر سيدات",
         descriptionEn : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aut!",
         descriptionAr : "تفاصيل العرض المتاح للخدمه بربلانتبرمتلاستلاس",
         image : "optionLaser1.jpg",
@@ -138,7 +138,7 @@ export const offerData = [
       {
         id : 3,
         titleEn :"Laser Offer ( Females )",
-        titleAr : "عروص الليزر سيدات",
+        titleAr : "عروض الليزر سيدات",
         descriptionEn : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aut!",
         descriptionAr : "تفاصيل العرض المتاح للخدمه بربلانتبرمتلاستلاس",
         image : "optionLaser1.jpg",
@@ -147,7 +147,7 @@ export const offerData = [
       {
         id : 4,
         titleEn :"Laser Offer ( Females )",
-        titleAr : "عروص الليزر سيدات",
+        titleAr : "عروض الليزر سيدات",
         descriptionEn : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aut!",
         descriptionAr : "تفاصيل العرض المتاح للخدمه بربلانتبرمتلاستلاس",
         image : "optionLaser1.jpg",

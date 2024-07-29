@@ -19,7 +19,11 @@ function Complaints() {
     }
 
     return (
-        <section className=''>
+        <section 
+            className={
+                i18n.language=='en' ? "dirLtR" : "dirRtL"
+            }
+        >
 
             <div className="sectionHeader">
                 <span className='headerSpan'></span>

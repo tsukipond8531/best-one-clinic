@@ -78,21 +78,17 @@ function Footer() {
                         {
                             i18n.language === 'ar' &&
                             <Col lg='12'>
-
                                 <p className='text-center'>
                                     &copy; {t('aboutTitle')} . جميع الحقوق محفوظه
                                 </p>
-
                             </Col>
                         }
                         {
                             i18n.language === 'en' &&
                             <Col lg='12'>
-
                                 <p className='text-center'>
                                     &copy; 2024 Best One Clinic. All rights reserved.
                                 </p>
-
                             </Col>
                         }
                     </Row>
