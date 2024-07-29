@@ -1,7 +1,7 @@
 import { } from 'react'
 import { Col, Row } from 'react-bootstrap'
 
-import aboutImg from '../../../public/Images/9082599.jpg'
+import aboutImg from '../../../public/Images/about.png'
 import './AboutUs.css'
 import { ImQuotesLeft } from "react-icons/im";
 import { ImQuotesRight } from "react-icons/im";
@@ -14,7 +14,7 @@ function AboutUs() {
     const { t, i18n } = useTranslation()
 
     return (
-        <section className='pt-5'>
+        <section className='pt-5 aboutBg'>
 
             <div className="sectionHeader">
                 <span className='headerSpan'></span>

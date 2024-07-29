@@ -4,7 +4,7 @@ import Main from './Main'
 // Import Styles And Images
 import './Home.css'
 import AboutUs from '../About Us/AboutUs'
-import Footer from '../Footer/Footer'
+import Devices from '../Devices/Devices'
 
 function Home() {
     return (
@@ -17,10 +17,10 @@ function Home() {
             <AboutUs />
             {/* End About Us Section  */}
 
+            {/* Start Devices Section */}
+            <Devices />
+            {/* End Devices Section */}
 
-            {/* Start Footer Section */}
-            <Footer/>
-            {/* End Footer Section */}
         </section>
     )
 }

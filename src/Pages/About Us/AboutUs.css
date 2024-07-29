@@ -1,4 +1,12 @@
+.aboutBg{
+    width: 100%;
+    height: auto;
+    /* background-color: rgba(128, 128, 128, 0.151); */
+    /* background: radial-gradient(circle at 50% 50%, rgba(99, 99, 99, 1) 0%, rgba(162, 170, 172, 1) 85%, rgba(87, 84, 87, 1) 100%); */
+    background: radial-gradient(circle at 100% 83%, rgba(41, 68, 92, 0.685) 6%, rgba(67, 100, 132, 0.61) 54%);
 
+    border-radius: 0 0  100px 100px ;
+}
 .aboutContent{
     height: auto;
     width: 100%;

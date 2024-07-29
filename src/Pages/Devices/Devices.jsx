@@ -3,7 +3,6 @@ import { Card, Col, Container, Row } from 'react-bootstrap'
 import './Devices.css'
 import BtnReadMore from '../../Components/BtnReadMore'
 import { devicesData, getImageUrl } from '../../assets/Data Of Pages/Main.data'
-import Footer from '../Footer/Footer'
 import { useTranslation } from 'react-i18next'
 
 
@@ -71,9 +70,6 @@ function Devices() {
             </Container>
 
 
-            {/* Start Footer */}
-            <Footer />
-            {/* End Footer */}
         </section>
     )
 }

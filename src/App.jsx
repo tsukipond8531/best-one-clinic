@@ -1,5 +1,5 @@
-import {} from 'react'
-import { BrowserRouter as Router , Routes , Route } from 'react-router-dom' 
+import { } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from './Pages/Login/Login'
 import Header from './Pages/Header/Header';
 import Home from './Pages/Home/Home';
@@ -17,32 +17,34 @@ import Complaints from './Pages/Contact US/Complaints';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import Footer from './Pages/Footer/Footer';
 
 function App() {
   return (
     <>
-        <Router>
-          <Header />
-          <Routes>
-            <Route index path='/' element={<Home/>} />
-            <Route  path='/home' element={<Home/>} />
-            <Route  path='/about' element={<AboutUs/>} />
-            <Route  path='/contact' element={<Contact/>} />
-            <Route  path='/complaints' element={<Complaints/>} />
-            <Route  path='/offers' element={<Offers/>} />
-            <Route  path='/devices' element={<Devices/>} />
-            <Route  path='/services' element={<Service/>} />
+      <Router>
+        <Header />
+        <Routes>
+          <Route index path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/about' element={<AboutUs />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/complaints' element={<Complaints />} />
+          <Route path='/offers' element={<Offers />} />
+          <Route path='/devices' element={<Devices />} />
+          <Route path='/services' element={<Service />} />
 
 
-            <Route  path='/offer/option/:id' element={<OfferOption/>} />
-            <Route  path='/products' element={<Products/>} />
-            <Route  path='/product/payment/:id' element={<Payment/>} />
+          <Route path='/offer/option/:id' element={<OfferOption />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/product/payment/:id' element={<Payment />} />
 
 
-            <Route path='/login' element={<Login/>} />
-            <Route path='/register' element={<Login/>} />
-          </Routes>
-        </Router>
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Login />} />
+        </Routes>
+        <Footer />
+      </Router>
     </>
 
   )

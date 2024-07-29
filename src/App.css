@@ -18,13 +18,13 @@ body{
     font-family: "Dosis", sans-serif !important;
     font-optical-sizing: auto;
 }
-body[dir="rtl"] {
+/* body[dir="rtl"] {
     direction: rtl;
 }
 
 body[dir="ltr"] {
     direction: ltr;
-}
+} */
 .dirLtR {
     direction: ltr !important;
 }

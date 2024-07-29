@@ -1,10 +1,10 @@
 .servicesParent{
     width: 100%;
 }
-.serviceItem{
-}
+
 .serviceCard {
     /* width: 100% !important; */
+    min-height: 60vh !important;
     overflow: hidden;
     border-radius: 50px !important;
     transition: 0.5s ease;
@@ -14,9 +14,9 @@
     transform: scale(0.9);
 }
 .serviceImg {
-    height: 40vh !important;
+    height: 30vh !important;
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
     transition: 0.5s ease;
     overflow: hidden;
 
@@ -25,7 +25,11 @@
     font-size: 1.5rem !important;
     text-transform: capitalize;
     color: var(--textColor) !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     letter-spacing: 0.5px;
-
+}
+.serviceSubTitle{
+    /* letter-spacing: 1px !important; */
+    color: var(--fontColor) !important;
+    font-size: 1.4rem !important;
 }
