@@ -56,7 +56,7 @@ function Header() {
 
 
             <Container fluid>
-                <Navbar.Brand href="/home" className='brandLogo'>
+                <Navbar.Brand href="/" className='brandLogo'>
                     <img src={logo} alt="logo" width={75} height={60} />
                 </Navbar.Brand>
 

@@ -42,26 +42,33 @@ function OfferOption() {
     }, [])
 
 
-    const [offerCartID , setOfferCartID] = useState({
-        _id : ""
+    const [offerCartID, setOfferCartID] = useState({
+        offerId: null
     })
 
+    const handleOfferIdChange = (e) => {
+        setOfferCartID((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }))
+    }
 
     const addToCart = (id) => {
         console.log(id);
         setOfferCartID({
-            OfferId : id
+            offerId: id,
+            
         })
         dispatch(incrementCart())
-        Api.post(`/carts` , offerCartID)
-        .then((res)=>{
-            console.log(res.data);
-            successNotification('Your Offer Added To Cart Successfully !')
-        }).catch((e)=>{
-            const errMsg = e?.response?.data?.message || e?.response?.data?.error
-                    console.log(errMsg);
-            ErrorNotification(errMsg || "Add To Cart Not Completed !")
-        })
+        Api.post(`/carts`, offerCartID,)
+            .then((res) => {
+                console.log(res.data);
+                successNotification('Your Offer Added To Cart Successfully !')
+            }).catch((e) => {
+                const errMsg = e?.response?.data?.message || e?.response?.data?.error
+                console.log(errMsg);
+                ErrorNotification(errMsg || "Add To Cart Not Completed !")
+            })
 
     }
 
@@ -119,6 +126,8 @@ function OfferOption() {
                                                     <Button
                                                         variant='outline-success'
                                                         className='p-2 btnAdd'
+                                                        name='offerId'
+                                                        onChange={handleOfferIdChange}
                                                         onClick={() => addToCart(item._id)}
 
                                                     >
@@ -161,6 +170,8 @@ function OfferOption() {
                                                         <Button
                                                             variant='outline-success'
                                                             className='p-2 btnAdd'
+                                                            name='offerId'
+                                                            onChange={handleOfferIdChange}
                                                             onClick={() => addToCart(item._id)}
 
                                                         >
