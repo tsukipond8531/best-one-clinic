@@ -1,26 +1,68 @@
-import { } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import './Contact.style.css'
 import { Row, Col, Form, Container, Button } from 'react-bootstrap'
 import { FaUser, FaPhoneAlt } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 import { PiSubtitlesFill } from "react-icons/pi";
+import { ErrorNotification, successNotification } from '../../Components/Notifications';
 // import { RiMessage2Fill } from "react-icons/ri";
+
+// Import Api Files
+import Api from '../../Config/api';
 
 
 function Complaints() {
     const { t, i18n } = useTranslation()
 
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        mobileNumber: "",
+        subject: "",
+        message: "",
+    })
+
+    const handleChangeData = (e) => {
+        setFormData((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }))
+    }
+
 
     const handleContactUs = (e) => {
         e.preventDefault()
         console.log("Submit Contact Us");
+        try {
+            Api.post('/complaints', formData)
+                .then((res) => {
+                    console.log(res.data);
+                    successNotification("Your Complaint Submited Successfully ❤️")
+                    setFormData({
+                        name: "",
+                        email: "",
+                        mobileNumber: "",
+                        subject: "",
+                        message: "",
+                    })
+                })
+                .catch((e) => {
+                    const errMsg = e?.response?.data?.message || e?.response?.data?.error
+                    console.log(errMsg);
+                    ErrorNotification(errMsg || "Complaint Not Submited  !")
+                })
+        } catch (error) {
+            ErrorNotification(error.message)
+        }
+        // console.log(formData);
+
     }
 
     return (
-        <section 
+        <section
             className={
-                i18n.language=='en' ? "dirLtR" : "dirRtL"
+                i18n.language == 'en' ? "dirLtR" : "dirRtL"
             }
         >
 
@@ -50,6 +92,9 @@ function Complaints() {
                                         }
                                         <Form.Control
                                             type="text"
+                                            name='name'
+                                            value={formData.name}
+                                            onChange={handleChangeData}
                                             placeholder={t('placeholderName')}
                                             className='inputField'
                                         />
@@ -70,6 +115,9 @@ function Complaints() {
                                         }
                                         <Form.Control
                                             type="text"
+                                            name='mobileNumber'
+                                            value={formData.mobileNumber}
+                                            onChange={handleChangeData}
                                             placeholder={t('placeholderPhone')}
                                             className='inputField'
                                         />
@@ -90,6 +138,9 @@ function Complaints() {
                                         }
                                         <Form.Control
                                             type="email"
+                                            name='email'
+                                            value={formData.email}
+                                            onChange={handleChangeData}
                                             placeholder={t('placeholderEmail')}
                                             className='inputField'
                                         />
@@ -110,6 +161,9 @@ function Complaints() {
                                         }
                                         <Form.Control
                                             type="text"
+                                            name='subject'
+                                            value={formData.subject}
+                                            onChange={handleChangeData}
                                             placeholder={t('placeholderSerComplaint')}
                                             className='inputField'
                                         />
@@ -120,8 +174,11 @@ function Complaints() {
                                 <Form.Group className="mb-3 groupParent" >
                                     <Form.Label className='inputLabel'> {t('YourComplaints')}</Form.Label>
                                     <Form.Control
-                                        as="textarea"
                                         rows={5}
+                                        as="textarea"
+                                        name='message'
+                                        value={formData.message}
+                                        onChange={handleChangeData}
                                         placeholder={t('placeholderComplaint')}
                                         className='txtArea'
                                     />

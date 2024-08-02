@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import '../Pages/Header/Header.css'
 import { useTranslation } from 'react-i18next';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUserData } from '../Redux/Reducers/user';
+import { useEffect } from 'react';
+
 
 function Dropdownlist() {
     const PhoneStyle = window.screen.availWidth < 768
@@ -12,6 +16,13 @@ function Dropdownlist() {
     const { t } = useTranslation()
 
 
+    const dispatch = useDispatch()
+    const userAdmin = useSelector((state) => state?.user?.data)
+    // const isLogin = useSelector((state) => state.user.isLogin)
+
+    useEffect(() => {
+        dispatch(fetchUserData())
+    }, [])
 
 
     return (
@@ -25,8 +36,47 @@ function Dropdownlist() {
                 {t('Contact')}
             </Dropdown.Toggle>
 
+            {/* Admin Options */}
+            {/* {
+                userAdmin?.data?.user?.role == 'admin'  &&
+                <Dropdown.Menu className='dropmenu'>
+                    <Dropdown.Item >
+                        <Link
+                            to='/admin/createOffer'
+                            className='dropLink'
+                        >
+                            {t('createOffer')}
+                        </Link>
+                    </Dropdown.Item>
+
+                    <Dropdown.Item >
+                        <Link
+                            className='dropLink'
+                            to='/admin/allComplaints'
+                        >
+                            {t("allComplaints")}
+                        </Link>
+                    </Dropdown.Item>
+
+                </Dropdown.Menu>
+            } */}
+
+
+            {/* User Options */}
+
             <Dropdown.Menu className='dropmenu'>
-                <Dropdown.Item >
+                { userAdmin?.data?.user?.role=='admin' ? 
+
+                    <Dropdown.Item >
+                    <Link
+                        to='/admin/createOffer'
+                        className='dropLink'
+                    >
+                        {t('createOffer')}
+                    </Link>
+                </Dropdown.Item>
+                :(
+                    <Dropdown.Item >
                     <Link
                         to='/contact'
                         className='dropLink'
@@ -34,15 +84,33 @@ function Dropdownlist() {
                         {t('Contact')}
                     </Link>
                 </Dropdown.Item>
+                )
+            }
 
-                <Dropdown.Item >
-                    <Link
-                        className='dropLink'
-                        to='complaints'
-                    >
-                        {t("Complaints")}
-                    </Link>
-                </Dropdown.Item>
+                {userAdmin?.data?.user?.role == 'admin'  ?
+                        <Dropdown.Item >
+                        <Link
+                            className='dropLink'
+                            to='/admin/allComplaints'
+                        >
+                            {t("allComplaints")}
+                        </Link>
+                    </Dropdown.Item>
+                    : 
+                    (
+                        <>
+                            <Dropdown.Item >
+                            <Link
+                                className='dropLink'
+                                to='complaints'
+                            >
+                                {t("Complaints")}
+                            </Link>
+                        </Dropdown.Item>
+                        </>
+                    )
+
+                }
 
 
                 <Dropdown.Item >
@@ -60,6 +128,8 @@ function Dropdownlist() {
 
 
             </Dropdown.Menu>
+
+
         </Dropdown>
     );
 }

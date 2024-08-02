@@ -1,2 +1,1 @@
-const domain = 'http://localhost:5000'
-export default domain
+export const domain = 'http://localhost:5000'

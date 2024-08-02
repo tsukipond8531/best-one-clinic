@@ -171,7 +171,9 @@
     transition: 0.5s ease;
 
 }
-
+.btnCart{
+    width: 100px;
+}
 
 
 /* Responsive CSS Style   */
@@ -199,6 +201,7 @@
     .btnSearch {
         border-color: var(--whiteColor) !important;
         color: var(--whiteColor) !important;
+        
     }
     .navbar-scroll {
         z-index: 1000000 !important;
@@ -208,5 +211,14 @@
         /* width: 100%; */
         margin-left: -10px;
     }
-
+    .formStyle{
+        flex-direction: column;
+        
+    }
+    
+    .smView{
+        margin: 0 !important;
+        margin-bottom: 10px !important;
+        width: 180px !important;
+    }
 }

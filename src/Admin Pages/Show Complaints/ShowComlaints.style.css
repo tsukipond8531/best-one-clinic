@@ -1,0 +1,15 @@
+.allComplaints-header{
+    font-size: 1.5rem !important;
+    font-weight: 600;
+    color: var(--HeaderColor) !important;
+}
+.msgText{
+    font-size: 1.3rem !important;
+}
+.itemStyle{
+    height: 60vh !important;
+    overflow: hidden;
+    border: 2px solid var(--mainColor) !important;
+    border-radius: 10px !important;
+    padding: 7px !important;
+}

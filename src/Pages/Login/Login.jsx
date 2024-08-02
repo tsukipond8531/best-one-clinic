@@ -77,7 +77,7 @@ function Login() {
         e.preventDefault()
         try {
             // console.log(registerInputs);
-            await Api.post('/auth/register', registerInputs)
+            await Api.post('/auth/signup', registerInputs)
                 .then((res) => {
                     console.log(res.data);
                     successNotification("Account Created ! ❤️")
@@ -98,8 +98,6 @@ function Login() {
     // ************************************ End Handle Logic Register  ************************************************ // 
 
     // ************************************ Start Handle Logic Login  ************************************************ // 
-
-
     const [loginInputs, setLoginInputs] = useState({
         email: "",
         password: "",
@@ -118,13 +116,19 @@ function Login() {
         try {
             Api.post('/auth/login', loginInputs)
                 .then((res) => {
-                    console.log(res.data);
-                    successNotification("Login Ok")
-                    navigate('/home')
+                    localStorage.clear()
+                    console.log(res.data.data.user._id);
+                    // console.log(res.data);
+                    let userId = res.data.data.user._id
+                    console.log(userId);
+                    localStorage.setItem('_id' , res.data.data.user._id)
+                    successNotification("Login Successfully..!")
+                    navigate(`/home`)
                 }).catch((e) => {
                     const errMsg = e?.response?.data?.message || e?.response?.data?.error
                     console.log(errMsg);
                     ErrorNotification(errMsg || "Invalid Email Or Password !")
+
                 })
         } catch (error) {
             ErrorNotification(e.message)

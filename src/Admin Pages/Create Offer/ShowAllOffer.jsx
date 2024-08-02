@@ -1,61 +1,43 @@
-import { useParams } from 'react-router-dom'
-import { offerData } from '../../assets/Data Of Pages/Main.data'
-import { useTranslation } from 'react-i18next';
-import { Row, Col, Card, Button } from 'react-bootstrap';
-import './Offers.style.css'
-// import optionImage from '../../../public/Images/optionLaser1.jpg'
-import { useDispatch } from 'react-redux';
-import { incrementCart, incrementFav } from '../../Redux/Reducers/counter'
-import { ErrorNotification, successNotification } from '../../Components/Notifications';
-import { useEffect, useState } from 'react';
-import Api from '../../Config/api';
-import { domain } from '../../Config/domain';
+import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { domain } from '../../Config/domain'
+import { Row , Col , Button , Card  } from 'react-bootstrap'
+import Api from '../../Config/api'
 
-function OfferOption() {
+import { useDispatch , useSelector } from 'react-redux'
+import { fetchOfferDetails } from '../../Redux/Reducers/Offers'
+import { successNotification } from '../../Components/Notifications'
+import { useNavigate } from 'react-router-dom'
 
-    const { i18n } = useTranslation()
-    const { category } = useParams()
-    // console.log(category);
-    let data = offerData.find((item) => item.category == category)
-    // console.log(data);
+function ShowAllOffer() {
 
-
-    console.log();
+    const {t , i18n } = useTranslation()
+    const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [offerDetails, setOfferDetails] = useState([])
-    useEffect(() => {
-        try {
-            Api.get(`/offers?category=${category}`)
-                .then((res) => {
-                    // console.log(res.data);
-                    setOfferDetails(res?.data?.data?.offers)
-                    // console.log(offerDetails[0].images[0]);
-                })
-                .catch((e) => {
-                    const errMsg = e?.response?.data?.message || e?.response?.data?.error
-                    console.log(errMsg);
-                    ErrorNotification(errMsg || "Invalid Email Or Password !")
-                })
-        } catch (error) {
-            ErrorNotification(error.message)
-        }
-    }, [])
+    useEffect(()=>{
+        dispatch(fetchOfferDetails())
+    } , [])
+    let allOffers = useSelector((state)=> state?.Offers?.data)
+    
 
-
-
-    const addToCart = (id) => {
-        console.log(id);
-        dispatch(incrementCart())
-        successNotification('Your Offer Added To Cart Successfully !')
+    const UpdateOffer = (id)=>{
+        navigate(`/admin/offer/update/${id}`)
     }
 
-    const addToFav = (id) => {
-        console.log(id);
-        dispatch(incrementFav())
-        successNotification('Your Offer Added To Favorite Successfully !')
+    const DeleteOffer = (id)=>{
+        // console.log(id);
+        Api.delete(`/offers/${id}`)
+        .then((res)=>{
+            console.log(res.data);
+            successNotification("Offer Deleted !")
+            dispatch(fetchOfferDetails())
+        }).catch((error)=>{
+            const errMsg =
+                    error?.response?.data?.message || error?.response?.data?.error;
+                console.log(errMsg);
+        })
 
     }
-
     return (
         <section
             className={
@@ -65,8 +47,7 @@ function OfferOption() {
 
             <div className="sectionHeader">
                 <span className='headerSpan'></span>
-                {i18n.language == 'en' && <h1 className='text-center sectionTitle' > {data.titleEN} </h1>}
-                {i18n.language == 'ar' && <h1 className='text-center sectionTitle' > {data.titleAr} </h1>}
+                <h1 className='text-center sectionTitle'>{t('showAllOffers')} </h1>
                 <span className='headerSpan'></span>
             </div>
 
@@ -75,11 +56,11 @@ function OfferOption() {
                     <Row>
                         {
                             i18n.language === 'en' ?
-                                offerDetails.map((item) => (
+                                allOffers?.data?.offers?.map((item) => (
                                     <>
                                         <Col lg='3' md='6' sm='10' className='optionItem mb-3' >
                                             <Card style={{ width: "100%" }}>
-                                                <Card.Img src={domain + '/uploads/offers/' + item.images[0]} className='optionImage' />
+                                                <Card.Img src={domain + '/uploads/offers/' + item.images[item.images.length - 1]} className='optionImage' />
                                                 <Card.Body>
                                                     <Card.Title className='optionTitle'>
                                                         {item.nameEn}
@@ -95,18 +76,18 @@ function OfferOption() {
                                                     <Button
                                                         variant='outline-danger'
                                                         className='me-2 p-2 btnFav'
-                                                        onClick={() => addToFav(item.id)}
+                                                        onClick={() => DeleteOffer(item._id)}
 
                                                     >
-                                                        Add To Favoriate
+                                                        Delete Offer
                                                     </Button>
                                                     <Button
                                                         variant='outline-success'
                                                         className='p-2 btnAdd'
-                                                        onClick={() => addToCart(item.id)}
+                                                        onClick={() => UpdateOffer(item._id)}
 
                                                     >
-                                                        Add To Cart
+                                                        Update Offer
                                                     </Button>
                                                 </Card.Footer>
                                             </Card>
@@ -117,11 +98,11 @@ function OfferOption() {
                                 :
                                 (
 
-                                    offerDetails.map((item) => (
+                                    allOffers?.data?.offers?.map((item) => (
                                         <>
                                             <Col lg='3' md='6' sm='10' className='optionItem mb-3' >
                                                 <Card style={{ width: "100%" }}>
-                                                    <Card.Img src={domain + '/uploads/offers/' + item.images[0]} className='optionImage' />
+                                                    <Card.Img src={domain + '/uploads/offers/' + item.images[item.images.length - 1]} className='optionImage' />
                                                     <Card.Body>
                                                         <Card.Title className='optionTitle'>
                                                             {item.nameAr}
@@ -137,18 +118,18 @@ function OfferOption() {
                                                         <Button
                                                             variant='outline-danger'
                                                             className='me-2 p-2 btnFav'
-                                                            onClick={() => addToFav(item.id)}
+                                                            onClick={() => DeleteOffer(item._id)}
 
                                                         >
-                                                            Add To Favoriate
+                                                            حذف العرض
                                                         </Button>
                                                         <Button
                                                             variant='outline-success'
                                                             className='p-2 btnAdd'
-                                                            onClick={() => addToCart(item.id)}
+                                                            onClick={() => UpdateOffer(item._id)}
 
                                                         >
-                                                            Add To Cart
+                                                            تعديل العرض
                                                         </Button>
                                                     </Card.Footer>
                                                 </Card>
@@ -157,6 +138,7 @@ function OfferOption() {
                                     )
                                     )
                                 )
+                                
                         }
                     </Row>
                 </div>
@@ -165,4 +147,4 @@ function OfferOption() {
     )
 }
 
-export default OfferOption
+export default ShowAllOffer

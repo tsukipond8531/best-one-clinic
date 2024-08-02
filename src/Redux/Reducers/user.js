@@ -1,11 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import Api from '../../Config/api'
 
+
+
 export const fetchUserData = createAsyncThunk(
     "user/fetchUserData",
     async (_, thunkApi) => {
         try {
-            let user = await Api.get("/user");
+            let _id = localStorage.getItem('_id')
+            let user = await Api.get(`/users/${_id}`);
+            console.log(user);
             return user.data;
         } catch (error) {
             const errMsg =
@@ -20,7 +24,8 @@ export const Userlogout = createAsyncThunk(
     "user/logout",
     async (_, thunkApi) => {
         try {
-            let user = await Api.post("/user/logout");
+            let user = await Api.post("/auth/logout");
+            localStorage.clear()
             return user.data;
         } catch (error) {
             const errMsg =

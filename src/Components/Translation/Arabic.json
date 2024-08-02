@@ -33,5 +33,39 @@
     "Login": "تسجيل الدخول",
     "TermsandConditions": "الشروط و الاحكام",
     "Sitemap": "خريطة الموقع",
-    "Connect": "مواقع التواصل الاجتماعي"
+    "Connect": "مواقع التواصل الاجتماعي",
+    "Profile": "الصفحة الشخصية",
+    "logout": "تسجيل الخروج",
+    "YourNationality": "جنسيتك",
+    "yourCity": "المدينة",
+    "Update": "تعديل البيانات",
+    "ChangeImage": "تغيير الصوره الشخصية",
+    "yourAge" : "عمرك",
+    "YourCart" : "السلة",
+    "Saudi" : "سعودي",
+    "NonSaudi" : "غير سعودي",
+    "YourFav" : "المفضلة",
+    "allComplaints" : "جميع الشكاوي",
+    "admin" : "صفحات الأدمن",
+    "createOffer" : "أنشاء عرض",
+    "from" : "من",
+    "email" : "البريد الالكتروني",
+    "phone" : "رقم الجوال",
+    "subject" : "الموضوع",
+    "msg" : "الرسالة",
+    "nameEn" : "الاسم باللغة الانجليزية",
+    "nameAr" : "الاسم باللغة العربية",
+    "category" : "القسم",
+    "descEn" : "الوصف باللغة الانجليزية",
+    "descAr" : "الوصف باللغة العربية",
+    "price" : "السعر",
+    "discount" : "الخصم",
+    "availabilityStatus" : "الاتاحة الخاصه بالعرض",
+    "uploadImage" : "تحميل صورة العرض",
+    "showAllOffers" : "عرض جميع العروض",
+    "updateOffer" : "تعديل العرض"
+
+
+
+
 }
