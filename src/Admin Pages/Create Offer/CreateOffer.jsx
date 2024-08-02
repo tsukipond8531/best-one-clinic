@@ -9,7 +9,7 @@ import { IoIosPricetags } from "react-icons/io";
 import { RiDiscountPercentFill } from "react-icons/ri";
 import './CreateOffer.style.css'
 import '../../Pages/Contact US/Contact.style.css'
-import img from '../../../public/Images/defaultProfile.jpg'
+import img from '../../../public/Images/defaultImg.png'
 import Api from '../../Config/api';
 import { ErrorNotification, successNotification } from '../../Components/Notifications';
 
@@ -66,10 +66,22 @@ function CreateOffer() {
             .then((res)=>{
                 console.log(res.data);
                 successNotification("Offer Created Successfully !")
+                setOfferInputs({
+                    nameEn: "",
+                    nameAr: "",
+                    category: "",
+                    descriptionEn: "",
+                    descriptionAr: "",
+                    price: Number,
+                    discount: "",
+                    images: "",
+                    availabilityStatus: ""
+                })
             }).catch((error)=>{
                 const errMsg =
                     error?.response?.data?.message || error?.response?.data?.error;
                 console.log(errMsg);
+                ErrorNotification(errMsg)
             })
         } catch (error) {
             ErrorNotification(error.message)
@@ -117,9 +129,10 @@ function CreateOffer() {
                                             <Form.Control
                                                 type="text"
                                                 name='nameEn'
+                                                value={offerInputs.nameEn}
                                                 onChange={HandleChangeOffers}
-                                                placeholder={t('placeholderName')}
-                                                className='inputField'
+                                                // placeholder={t('placeholderName')}
+                                                className='inputField selectStyle'
                                             />
                                         </div>
                                     </Form.Group>
@@ -139,9 +152,10 @@ function CreateOffer() {
                                             <Form.Control
                                                 type="text"
                                                 name='nameAr'
+                                                value={offerInputs.nameAr}
                                                 onChange={HandleChangeOffers}
-                                                placeholder={t('placeholderName')}
-                                                className='inputField'
+                                                // placeholder={t('placeholderName')}
+                                                className='inputField selectStyle'
                                             />
                                         </div>
                                     </Form.Group>
@@ -159,11 +173,13 @@ function CreateOffer() {
                                                 <span className='inputIcon me-4'> <BiSolidCategory /> </span>
                                             }
                                             <select
-                                                className='inputField w-100 ms-3 me-3'
+                                                className='inputField w-100 ms-3 me-3 selectStyle'
                                                 name='category'
+                                                value={offerInputs.category}
                                                 onChange={HandleChangeOffers}
 
                                             >
+                                                <option selected> ---  Select Category --- </option>
                                                 <option>Laser</option>
                                                 <option>Skin_and_Body_Lightening</option>
                                                 <option>Cosmetic</option>
@@ -189,10 +205,12 @@ function CreateOffer() {
                                                 <span className='inputIcon me-4'> <BiSolidCategory /> </span>
                                             }
                                             <select
-                                                className='inputField w-100 ms-3 me-3'
+                                                className='inputField w-100 ms-3 me-3 selectStyle'
                                                 name='availabilityStatus'
+                                                value={offerInputs.availabilityStatus}
                                                 onChange={HandleChangeOffers}
                                             >
+                                                <option selected> ---  Select Availability --- </option>
                                                 <option> Available </option>
                                                 <option>Unavailable </option>
                                             </select>
@@ -214,9 +232,10 @@ function CreateOffer() {
                                             <Form.Control
                                                 type="text"
                                                 name='descriptionEn'
+                                                value={offerInputs.descriptionEn}
                                                 onChange={HandleChangeOffers}
-                                                placeholder={t('placeholderEmail')}
-                                                className='inputField'
+                                                // placeholder={t('placeholderEmail')}
+                                                className='inputField selectStyle'
                                             />
                                         </div>
                                     </Form.Group>
@@ -236,9 +255,10 @@ function CreateOffer() {
                                             <Form.Control
                                                 type="text"
                                                 name='descriptionAr'
+                                                value={offerInputs.descriptionAr}
                                                 onChange={HandleChangeOffers}
-                                                placeholder={t('placeholderEmail')}
-                                                className='inputField'
+                                                // placeholder={t('placeholderEmail')}
+                                                className='inputField selectStyle'
                                             />
                                         </div>
                                     </Form.Group>
@@ -256,11 +276,12 @@ function CreateOffer() {
                                                 <span className='inputIcon me-4'> <IoIosPricetags /> </span>
                                             }
                                             <Form.Control
-                                                type="text"
+                                                type="number"
                                                 name='price'
+                                                value={offerInputs.price}
                                                 onChange={HandleChangeOffers}
-                                                placeholder={t('placeholderSubject')}
-                                                className='inputField'
+                                                // placeholder={t('placeholderSubject')}
+                                                className='inputField selectStyle'
                                             />
                                         </div>
                                     </Form.Group>
@@ -278,11 +299,12 @@ function CreateOffer() {
                                                 <span className='inputIcon me-4'> <RiDiscountPercentFill /> </span>
                                             }
                                             <Form.Control
-                                                type="text"
+                                                type="number"
                                                 name='discount'
+                                                value={offerInputs.discount}
                                                 onChange={HandleChangeOffers}
-                                                placeholder={t('placeholderSubject')}
-                                                className='inputField'
+                                                // placeholder={t('placeholderSubject')}
+                                                className='inputField selectStyle'
                                             />
                                         </div>
                                     </Form.Group>

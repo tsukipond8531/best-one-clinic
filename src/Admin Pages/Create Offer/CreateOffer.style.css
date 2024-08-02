@@ -24,3 +24,8 @@
     height: 45px ;
     border-radius: 30px;
 }
+.selectStyle{
+    font-size: 1.3rem !important;
+    /* direction: ltr !important; */
+    font-weight: 600;
+}

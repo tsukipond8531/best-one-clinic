@@ -33,8 +33,8 @@ function OfferOption() {
                 })
                 .catch((e) => {
                     const errMsg = e?.response?.data?.message || e?.response?.data?.error
-                    console.log(errMsg);
-                    ErrorNotification(errMsg || "Invalid Email Or Password !")
+                    // console.log(errMsg);
+                    ErrorNotification(errMsg || "!")
                 })
         } catch (error) {
             ErrorNotification(error.message)
@@ -42,11 +42,27 @@ function OfferOption() {
     }, [])
 
 
+    const [offerCartID , setOfferCartID] = useState({
+        _id : ""
+    })
+
 
     const addToCart = (id) => {
         console.log(id);
+        setOfferCartID({
+            OfferId : id
+        })
         dispatch(incrementCart())
-        successNotification('Your Offer Added To Cart Successfully !')
+        Api.post(`/carts` , offerCartID)
+        .then((res)=>{
+            console.log(res.data);
+            successNotification('Your Offer Added To Cart Successfully !')
+        }).catch((e)=>{
+            const errMsg = e?.response?.data?.message || e?.response?.data?.error
+                    console.log(errMsg);
+            ErrorNotification(errMsg || "Add To Cart Not Completed !")
+        })
+
     }
 
     const addToFav = (id) => {
@@ -95,7 +111,7 @@ function OfferOption() {
                                                     <Button
                                                         variant='outline-danger'
                                                         className='me-2 p-2 btnFav'
-                                                        onClick={() => addToFav(item.id)}
+                                                        onClick={() => addToFav(item._id)}
 
                                                     >
                                                         Add To Favoriate
@@ -103,7 +119,7 @@ function OfferOption() {
                                                     <Button
                                                         variant='outline-success'
                                                         className='p-2 btnAdd'
-                                                        onClick={() => addToCart(item.id)}
+                                                        onClick={() => addToCart(item._id)}
 
                                                     >
                                                         Add To Cart
@@ -137,7 +153,7 @@ function OfferOption() {
                                                         <Button
                                                             variant='outline-danger'
                                                             className='me-2 p-2 btnFav'
-                                                            onClick={() => addToFav(item.id)}
+                                                            onClick={() => addToFav(item._id)}
 
                                                         >
                                                             Add To Favoriate
@@ -145,7 +161,7 @@ function OfferOption() {
                                                         <Button
                                                             variant='outline-success'
                                                             className='p-2 btnAdd'
-                                                            onClick={() => addToCart(item.id)}
+                                                            onClick={() => addToCart(item._id)}
 
                                                         >
                                                             Add To Cart

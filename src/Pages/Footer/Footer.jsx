@@ -31,9 +31,7 @@ function Footer() {
                                 <p className='footer-img-text' data-aos="flip-right">
                                     {t('aboutText')}
                                 </p>
-                                <p className='footer-img-text' data-aos="flip-right">
-                                    {t('aboutText2')}
-                                </p>
+                                
                             </Col>
 
                             <Col lg='4' sm='8' data-aos="flip-left" className='sitemapParent'>

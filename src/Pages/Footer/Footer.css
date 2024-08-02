@@ -20,7 +20,7 @@
     padding: 10px;
     text-transform: capitalize;
     font-weight: 500;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     text-align: center;
 }
 .footer-sitemap{
@@ -35,7 +35,7 @@
 }
 .footer-connect h3 , .footer-sitemap h3 {
     font-size: 2.2rem;
-    letter-spacing: 2px !important;
+    /* letter-spacing: 2px !important; */
     text-align: center;
 }
 .footer-partOne .footer-sitemap ul{
@@ -107,7 +107,7 @@
     padding: 15px;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 }
 .footer-img-text {
     margin : 0 50px !important
