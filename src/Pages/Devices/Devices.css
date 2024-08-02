@@ -24,7 +24,6 @@
 }
 .devTitle{
     text-transform: capitalize !important;
-    letter-spacing: 1px !important;
     font-size: 1.6rem !important;
     font-weight: 700 !important;
     color: var(--HeaderColor) !important;
