@@ -20,7 +20,7 @@ function OfferOption() {
     // console.log(data);
 
 
-    console.log();
+    // console.log();
     const dispatch = useDispatch()
     const [offerDetails, setOfferDetails] = useState([])
     useEffect(() => {
@@ -53,14 +53,10 @@ function OfferOption() {
         }))
     }
 
+    
     const addToCart = (id) => {
-        console.log(id);
-        setOfferCartID({
-            offerId: id,
-            
-        })
-        dispatch(incrementCart())
-        Api.post(`/carts`, offerCartID,)
+        try {
+            Api.post(`/carts/${id}`, offerCartID)
             .then((res) => {
                 console.log(res.data);
                 successNotification('Your Offer Added To Cart Successfully !')
@@ -69,6 +65,10 @@ function OfferOption() {
                 console.log(errMsg);
                 ErrorNotification(errMsg || "Add To Cart Not Completed !")
             })
+        } catch (error) {
+            ErrorNotification(error.message)
+        }
+        
 
     }
 
@@ -127,6 +127,7 @@ function OfferOption() {
                                                         variant='outline-success'
                                                         className='p-2 btnAdd'
                                                         name='offerId'
+                                                        value={offerCartID.offerId}
                                                         onChange={handleOfferIdChange}
                                                         onClick={() => addToCart(item._id)}
 
@@ -171,6 +172,7 @@ function OfferOption() {
                                                             variant='outline-success'
                                                             className='p-2 btnAdd'
                                                             name='offerId'
+                                                            value={offerCartID.offerId}
                                                             onChange={handleOfferIdChange}
                                                             onClick={() => addToCart(item._id)}
 

@@ -4,7 +4,7 @@ export const mainData = [
     title: "Beauty Clinic",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo obcaecati eligendi cumque reiciendis, corrupti consequatur?",
     ImgUrl: "image.png",
-    bg: "bg-1.jpg",
+    bg: "bg-11.jpg",
   },
   {
     id: 2,
