@@ -1,5 +1,5 @@
 import { } from 'react'
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { EffectFade, Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -17,11 +17,15 @@ function Main() {
             spaceBetween={30}
             effect={'fade'}
             navigation={true}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+            }}
             pagination={{
                 clickable: true,
 
             }}
-            modules={[EffectFade, Navigation, Pagination]}
+            modules={[Autoplay , EffectFade, Navigation, Pagination]}
             className="mySwiper"
         >
             {
