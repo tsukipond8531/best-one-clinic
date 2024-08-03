@@ -74,7 +74,7 @@ function CreateOffer() {
                     descriptionAr: "",
                     price: Number,
                     discount: "",
-                    images: "",
+                    images: "" ,
                     availabilityStatus: ""
                 })
             }).catch((error)=>{

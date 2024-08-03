@@ -78,6 +78,11 @@ body[dir="ltr"] {
     margin: 0 auto;
 }
 
+.successClass{
+    font-size: 2.5rem !important;
+    text-transform: capitalize !important;
+    font-weight: 700 !important;
+}
 
 /* Responsive CSS Style   */
 @media screen and (max-width: 768px) {

@@ -5,7 +5,7 @@ import { Row, Col, Card, Button } from 'react-bootstrap';
 import './Offers.style.css'
 // import optionImage from '../../../public/Images/optionLaser1.jpg'
 import { useDispatch } from 'react-redux';
-import { incrementCart, incrementFav } from '../../Redux/Reducers/counter'
+import { incrementFav } from '../../Redux/Reducers/counter'
 import { ErrorNotification, successNotification } from '../../Components/Notifications';
 import { useEffect, useState } from 'react';
 import Api from '../../Config/api';
@@ -100,7 +100,7 @@ function OfferOption() {
                             i18n.language === 'en' ?
                                 offerDetails.map((item) => (
                                     <>
-                                        <Col lg='3' md='6' sm='10' className='optionItem mb-3' >
+                                        <Col lg='4' md='6' sm='10' className='optionItem mb-3' >
                                             <Card style={{ width: "100%" }}>
                                                 <Card.Img src={domain + '/uploads/offers/' + item.images[0]} className='optionImage' />
                                                 <Card.Body>
@@ -112,6 +112,9 @@ function OfferOption() {
                                                     </Card.Text>
                                                     <Card.Title className='optionTitle'>
                                                         {item.price} SAR
+                                                    </Card.Title>
+                                                    <Card.Title className='optionTitle'>
+                                                        Discount :  {item.discount} %
                                                     </Card.Title>
                                                 </Card.Body>
                                                 <Card.Footer className='optionFooter'>
@@ -145,7 +148,7 @@ function OfferOption() {
 
                                     offerDetails.map((item) => (
                                         <>
-                                            <Col lg='3' md='6' sm='10' className='optionItem mb-3' >
+                                            <Col lg='4' md='6' sm='10' className='optionItem mb-3' >
                                                 <Card style={{ width: "100%" }}>
                                                     <Card.Img src={domain + '/uploads/offers/' + item.images[0]} className='optionImage' />
                                                     <Card.Body>
@@ -158,18 +161,19 @@ function OfferOption() {
                                                         <Card.Title className='optionTitle'>
                                                             {item.price} ريال سعودي
                                                         </Card.Title>
+                                                        <Card.Title className='discount'>
+                                                        الخصم :  {item.discount} %
+                                                    </Card.Title>
                                                     </Card.Body>
                                                     <Card.Footer className='optionFooter'>
-                                                        <Button
-                                                            variant='outline-danger'
+                                                        <button
                                                             className='me-2 p-2 btnFav'
                                                             onClick={() => addToFav(item._id)}
 
                                                         >
                                                             Add To Favoriate
-                                                        </Button>
-                                                        <Button
-                                                            variant='outline-success'
+                                                        </button>
+                                                        <button
                                                             className='p-2 btnAdd'
                                                             name='offerId'
                                                             value={offerCartID.offerId}
@@ -178,7 +182,7 @@ function OfferOption() {
 
                                                         >
                                                             Add To Cart
-                                                        </Button>
+                                                        </button>
                                                     </Card.Footer>
                                                 </Card>
                                             </Col>

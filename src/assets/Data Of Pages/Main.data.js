@@ -9,7 +9,7 @@ export const mainData = [
   },
   {
     id: 3,
-    bg: "bg-1.jpg",
+    bg: "3.png",
   },
 ];
 export const devicesData = [

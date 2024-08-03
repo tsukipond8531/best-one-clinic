@@ -46,7 +46,6 @@
 .offerContent h3{
     font-size: 2.3rem;
     align-self: flex-start;
-    letter-spacing: 1px;
     font-weight: 700;
     color: var(--fontColor);
 }
@@ -73,8 +72,8 @@
 }
 .optionItem .card{
     overflow: hidden !important;
-    border: 2px solid var(--mainColor) !important;
-    border-radius: 50px !important;
+    border: 2px solid var(--HeaderColor) !important;
+    border-radius: 50px  !important;
 }
 .optionItem .optionImage{
     height: auto !important;
@@ -82,14 +81,14 @@
     object-fit: cover;
 }
 .optionItem .optionTitle{
-    font-size: 1.8rem !important;
+    font-size: 2.5rem !important;
     color: var(--fontColor);
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 700 !important;
 }
 .optionItem .optionDescription{
-    font-size: 1.2rem !important;
+    font-size: 1.5rem !important;
     color: var(--HeaderColor);
+    font-weight: 600;
 }
 .optionItem .optionFooter{
     padding: 10px;
@@ -99,8 +98,36 @@
     align-items: center;
 }
 .optionItem .btnFav , .optionItem .btnAdd{
-    width: 150px;
-    font-size: 1.2rem !important;
+    width: 200px;
+    height: 60px !important;
+    font-size: 1.5rem !important;
     font-weight: 600;
+    padding: 8px !important;
+    border-radius: 15px !important;
+    background-color: var(--HeaderColor) !important;
+    color: var(--mainColor);
+    border: 1px solid var(--mainColor) !important;
+    transition: 0.5s ease;
+}
+.optionItem .btnFav:hover , .optionItem .btnAdd:hover{
+    background-color: transparent !important;
+    color: var(--HeaderColor) !important;
+    border-color: var(--HeaderColor) !important;
+}
+.discount{
+    font-size: 1.8rem !important;
+    color: green !important;
+    font-weight: 800 !important;
 }
 /* End Offer Option Style */
+
+
+@media screen and (max-width: 768px) {
+    .optionItem .card{
+        border-radius: 30px !important;
+    }
+    .btnAdd , .btnFav{
+        width: 180px !important;
+        font-size: 1.3rem !important;
+    }
+}
