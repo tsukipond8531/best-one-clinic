@@ -6,7 +6,7 @@ import Api from '../../Config/api'
 
 import { useDispatch , useSelector } from 'react-redux'
 import { fetchOfferDetails } from '../../Redux/Reducers/Offers'
-import { successNotification } from '../../Components/Notifications'
+import { ErrorNotification, successNotification } from '../../Components/Notifications'
 import { useNavigate } from 'react-router-dom'
 
 function ShowAllOffer() {
@@ -34,7 +34,8 @@ function ShowAllOffer() {
         }).catch((error)=>{
             const errMsg =
                     error?.response?.data?.message || error?.response?.data?.error;
-                console.log(errMsg);
+                // console.log(errMsg);
+                ErrorNotification(errMsg)
         })
 
     }

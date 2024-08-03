@@ -9,12 +9,12 @@ export const fetchUserData = createAsyncThunk(
         try {
             let _id = localStorage.getItem('_id')
             let user = await Api.get(`/users/${_id}`);
-            console.log(user);
+            // console.log(user);
             return user.data;
         } catch (error) {
             const errMsg =
             error?.response?.data?.message || error?.response?.data?.error;
-            console.log(errMsg);
+            // console.log(errMsg);
             return thunkApi.rejectWithValue(errMsg);
         }
     }
@@ -30,7 +30,7 @@ export const Userlogout = createAsyncThunk(
         } catch (error) {
             const errMsg =
                 error?.response?.data?.message || error?.response?.data?.error;
-            console.log(errMsg);
+            // console.log(errMsg);
             return thunkApi.rejectWithValue(errMsg);
         }
     }

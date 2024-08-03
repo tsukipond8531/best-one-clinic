@@ -8,12 +8,12 @@ export const fetchAllComplaints = createAsyncThunk(
     async (_, thunkApi) => {
         try {
             let complaints = await Api.get(`/complaints`);
-            console.log(complaints);
+            // console.log(complaints);
             return complaints.data;
         } catch (error) {
             const errMsg =
             error?.response?.data?.message || error?.response?.data?.error;
-            console.log(errMsg);
+            // console.log(errMsg);
             return thunkApi.rejectWithValue(errMsg);
         }
     }

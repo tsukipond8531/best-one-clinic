@@ -79,8 +79,8 @@ function Login() {
             // console.log(registerInputs);
             await Api.post('/auth/signup', registerInputs)
                 .then((res) => {
-                    console.log(res.data);
-                    successNotification("Account Created ! ❤️")
+                    // console.log(res.data);
+                    successNotification("Account Created  Successfully ! ❤️")
                     HandleRoute('/login')
                 })
                 .catch((e) => {
@@ -117,11 +117,11 @@ function Login() {
             Api.post('/auth/login', loginInputs)
                 .then((res) => {
                     localStorage.clear()
-                    console.log(res.data.data.user._id);
+                    // console.log(res.data.data.user._id);
                     // console.log(res.data);
-                    let userId = res.data.data.user._id
-                    console.log(userId);
-                    localStorage.setItem('_id' , res.data.data.user._id)
+                    let userId = res?.data?.data.user?._id
+                    // console.log(userId);
+                    localStorage.setItem('_id' , userId)
                     successNotification("Login Successfully..!")
                     navigate(`/home`)
                 }).catch((e) => {

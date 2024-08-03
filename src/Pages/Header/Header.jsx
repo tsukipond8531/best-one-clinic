@@ -29,7 +29,7 @@ function Header() {
     const isLogin = useSelector((state) => state.user.isLogin)
     const user = useSelector((state) => state?.user?.data)
     // console.log(user.data.user.role);
-    console.log(isLogin);
+    // console.log(isLogin);
     const cartCounter = useSelector((state) => state.counter.CartValue)
     const favCounter = useSelector((state) => state.counter.FavValue)
 

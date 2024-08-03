@@ -80,7 +80,7 @@ function CreateOffer() {
             }).catch((error)=>{
                 const errMsg =
                     error?.response?.data?.message || error?.response?.data?.error;
-                console.log(errMsg);
+                // console.log(errMsg);
                 ErrorNotification(errMsg)
             })
         } catch (error) {

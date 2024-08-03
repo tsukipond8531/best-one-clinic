@@ -6,13 +6,12 @@ export const fetchOfferDetails = createAsyncThunk(
     async (_, thunkApi) => {
         try {
         let user = await Api.get(`/offers`);
-        console.log(user);
-        console.log("hhhh");
+        // console.log(user);
         return user.data;
         } catch (error) {
         const errMsg =
             error?.response?.data?.message || error?.response?.data?.error;
-        console.log(errMsg);
+        // console.log(errMsg);
         return thunkApi.rejectWithValue(errMsg);
         }
     }
