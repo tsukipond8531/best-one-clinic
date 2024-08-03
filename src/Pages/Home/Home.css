@@ -11,9 +11,7 @@
     background-size: contain;
 }
 
-/* .swiper-slide:nth-child(2n) {
-    background-color: rgb(150, 150, 25) !important;
-} */
+
 
 .swiper-slide img {
     display: block;
@@ -28,19 +26,20 @@
     width: 50px !important;
     height: 5px !important;
     border-radius: 15px !important;
+    margin-bottom: 30px !important;
 }
 
 .swiper-pagination-bullet-active {
-    background: var(--mainColor) !important;
+    background: var(--whiteColor) !important;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-    color: var(--mainColor) !important;
+    color: var(--whiteColor) !important;
     width: 70px !important;
     height: 70px !important;
     border-radius: 50%;
-    background-color: #232c3bbd !important;
+    background-color: var(--HeaderColor) !important;
     /* font-size: 15px !important; */
 }
 
