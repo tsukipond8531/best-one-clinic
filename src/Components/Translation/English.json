@@ -64,5 +64,7 @@
     "availabilityStatus" : "Availability Status",
     "uploadImage" : "Upload Image",
     "showAllOffers" : "Show All Offers",
-    "updateOffer" : "Update Offer"
+    "updateOffer" : "Update Offer",
+    "allFav" : "All Favorite",
+    "favNum" : "Favorite Number"
 }

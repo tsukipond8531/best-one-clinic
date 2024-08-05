@@ -63,9 +63,10 @@
     "availabilityStatus" : "الاتاحة الخاصه بالعرض",
     "uploadImage" : "تحميل صورة العرض",
     "showAllOffers" : "عرض جميع العروض",
-    "updateOffer" : "تعديل العرض"
-
-
+    "updateOffer" : "تعديل العرض",
+    "allFav" : "جميع المفضلة",
+    "favNum" : "عدد العروض المفضلة"
+    
 
 
 }

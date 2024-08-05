@@ -4,8 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import './Offers.style.css'
 // import optionImage from '../../../public/Images/optionLaser1.jpg'
-import { useDispatch } from 'react-redux';
-import { incrementFav } from '../../Redux/Reducers/counter'
 import { ErrorNotification, successNotification } from '../../Components/Notifications';
 import { useEffect, useState } from 'react';
 import Api from '../../Config/api';
@@ -21,7 +19,6 @@ function OfferOption() {
 
 
     // console.log();
-    const dispatch = useDispatch()
     const [offerDetails, setOfferDetails] = useState([])
     useEffect(() => {
         try {
@@ -53,28 +50,43 @@ function OfferOption() {
         }))
     }
 
-    
+
     const addToCart = (id) => {
         try {
             Api.post(`/carts/${id}`, offerCartID)
-            .then((res) => {
-                console.log(res.data);
-                successNotification('Your Offer Added To Cart Successfully !')
-            }).catch((e) => {
-                const errMsg = e?.response?.data?.message || e?.response?.data?.error
-                console.log(errMsg);
-                ErrorNotification(errMsg || "Add To Cart Not Completed !")
-            })
+                .then((res) => {
+                    console.log(res.data);
+                    successNotification('Your Offer Added To Cart Successfully !')
+                }).catch((e) => {
+                    const errMsg = e?.response?.data?.message || e?.response?.data?.error
+                    console.log(errMsg);
+                    ErrorNotification(errMsg || "Add To Cart Not Completed !")
+                })
         } catch (error) {
             ErrorNotification(error.message)
         }
-        
+
 
     }
 
     const addToFav = (id) => {
-        console.log(id);
-        dispatch(incrementFav())
+        // console.log(id);
+        try {
+            Api.post(`/wishlist/${id}`)
+                .then((res) => {
+                    console.log(res.data);
+                    successNotification("Your Offer Added To Favorite Successfully !")
+                })
+                .catch((e) => {
+                    const errMsg = e?.response?.data?.message || e?.response?.data?.error
+                    console.log(errMsg);
+                    ErrorNotification(errMsg || "Add To Favorite Not Completed !")
+                })
+        } catch (error) {
+            ErrorNotification(error.message)
+
+        }
+
         successNotification('Your Offer Added To Favorite Successfully !')
 
     }
@@ -102,7 +114,9 @@ function OfferOption() {
                                     <>
                                         <Col lg='4' md='6' sm='10' className='optionItem mb-3' >
                                             <Card style={{ width: "100%" }}>
-                                                <Card.Img src={domain + '/uploads/offers/' + item.images[0]} className='optionImage' />
+                                                <div className="offerImg">
+                                                    <Card.Img src={domain + '/uploads/offers/' + item.images[item.images.length - 1]} className='optionImage' />
+                                                </div>
                                                 <Card.Body>
                                                     <Card.Title className='optionTitle'>
                                                         {item.nameEn}
@@ -150,8 +164,9 @@ function OfferOption() {
                                         <>
                                             <Col lg='4' md='6' sm='10' className='optionItem mb-3' >
                                                 <Card style={{ width: "100%" }}>
-                                                    <Card.Img src={domain + '/uploads/offers/' + item.images[0]} className='optionImage' />
-                                                    <Card.Body>
+                                                    <div className="optionImg">
+                                                        <Card.Img src={domain + '/uploads/offers/' + item.images[item.images.length - 1]} className='optionImage' />
+                                                    </div>                                                    <Card.Body>
                                                         <Card.Title className='optionTitle'>
                                                             {item.nameAr}
                                                         </Card.Title>
@@ -162,8 +177,8 @@ function OfferOption() {
                                                             {item.price} ريال سعودي
                                                         </Card.Title>
                                                         <Card.Title className='discount'>
-                                                        الخصم :  {item.discount} %
-                                                    </Card.Title>
+                                                            الخصم :  {item.discount} %
+                                                        </Card.Title>
                                                     </Card.Body>
                                                     <Card.Footer className='optionFooter'>
                                                         <button

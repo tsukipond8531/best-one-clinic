@@ -36,59 +36,42 @@ function Dropdownlist() {
                 {t('Contact')}
             </Dropdown.Toggle>
 
-            {/* Admin Options */}
-            {/* {
-                userAdmin?.data?.user?.role == 'admin'  &&
-                <Dropdown.Menu className='dropmenu'>
-                    <Dropdown.Item >
-                        <Link
-                            to='/admin/createOffer'
-                            className='dropLink'
-                        >
-                            {t('createOffer')}
-                        </Link>
-                    </Dropdown.Item>
-
-                    <Dropdown.Item >
-                        <Link
-                            className='dropLink'
-                            to='/admin/allComplaints'
-                        >
-                            {t("allComplaints")}
-                        </Link>
-                    </Dropdown.Item>
-
-                </Dropdown.Menu>
-            } */}
-
-
             {/* User Options */}
 
             <Dropdown.Menu className='dropmenu'>
-                { userAdmin?.data?.user?.role=='admin' ? 
-
-                    <Dropdown.Item >
-                    <Link
-                        to='/admin/createOffer'
-                        className='dropLink'
-                    >
-                        {t('createOffer')}
-                    </Link>
-                </Dropdown.Item>
-                :(
-                    <Dropdown.Item >
-                    <Link
-                        to='/contact'
-                        className='dropLink'
-                    >
-                        {t('Contact')}
-                    </Link>
-                </Dropdown.Item>
-                )
-            }
-
-                {userAdmin?.data?.user?.role == 'admin'  ?
+                {userAdmin?.data?.user?.role == 'admin' ?
+                    <>
                         <Dropdown.Item >
+                            <Link
+                                to='/admin/createOffer'
+                                className='dropLink'
+                            >
+                                {t('createOffer')}
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item >
+                            <Link
+                                to='/admin/allFav'
+                                className='dropLink'
+                            >
+                                {t('allFav')}
+                            </Link>
+                        </Dropdown.Item>
+                    </>
+                    : (
+                        <Dropdown.Item >
+                            <Link
+                                to='/contact'
+                                className='dropLink'
+                            >
+                                {t('Contact')}
+                            </Link>
+                        </Dropdown.Item>
+                    )
+                }
+
+                {userAdmin?.data?.user?.role == 'admin' ?
+                    <Dropdown.Item >
                         <Link
                             className='dropLink'
                             to='/admin/allComplaints'
@@ -96,17 +79,17 @@ function Dropdownlist() {
                             {t("allComplaints")}
                         </Link>
                     </Dropdown.Item>
-                    : 
+                    :
                     (
                         <>
                             <Dropdown.Item >
-                            <Link
-                                className='dropLink'
-                                to='complaints'
-                            >
-                                {t("Complaints")}
-                            </Link>
-                        </Dropdown.Item>
+                                <Link
+                                    className='dropLink'
+                                    to='complaints'
+                                >
+                                    {t("Complaints")}
+                                </Link>
+                            </Dropdown.Item>
                         </>
                     )
 

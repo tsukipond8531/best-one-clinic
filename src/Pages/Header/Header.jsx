@@ -43,6 +43,7 @@ function Header() {
     const handleLogout = () => {
         dispatch(Userlogout())
         navigate('/home')
+        navigate(0)
     }
     return (
         // <Navbar expand="lg" className={scrolled ? "bgColor nav-height" : "bg-body-tertiary nav-height"} fixed='top'>

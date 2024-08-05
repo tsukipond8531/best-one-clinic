@@ -15,6 +15,12 @@ import Footer from './Pages/Footer/Footer';
 import Profile from './Pages/Profile/Profile';
 import Cart from './Pages/Cart/Cart';
 import Fav from './Pages/Favorite/Fav';
+import ShowComplaints from './Admin Pages/Show Complaints/ShowComplaints';
+import CreateOffer from './Admin Pages/Create Offer/CreateOffer';
+import ShowAllOffer from './Admin Pages/Create Offer/ShowAllOffer';
+import UpdateOffer from './Admin Pages/Create Offer/UpdateOffer';
+import AllUsersFav from './Admin Pages/Show Favorite/AllUsersFav';
+import UsersFav from './Admin Pages/Show Favorite/UsersFav';
 
 // Import Styles
 import './App.css'
@@ -24,10 +30,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 // Import Api File
 // import { useDispatch , useSelector } from 'react-redux';
 // import { fetchUserData } from './Redux/Reducers/user';
-import ShowComplaints from './Admin Pages/Show Complaints/ShowComplaints';
-import CreateOffer from './Admin Pages/Create Offer/CreateOffer';
-import ShowAllOffer from './Admin Pages/Create Offer/ShowAllOffer';
-import UpdateOffer from './Admin Pages/Create Offer/UpdateOffer';
 
 function App() {
 
@@ -65,6 +67,8 @@ function App() {
           <Route path='/admin/createOffer' element={<CreateOffer />} />
           <Route path='/admin/showAllOffers' element={<ShowAllOffer />} />
           <Route path='/admin/offer/update/:id' element={< UpdateOffer />} />
+          <Route path='/admin/allFav' element={< AllUsersFav />} />
+          <Route path='/admin/allFav/item/:favId' element={< UsersFav />} />
 
 
           <Route path='/login' element={<Login />} />
