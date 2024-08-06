@@ -10,6 +10,12 @@ import { PiSubtitlesFill } from "react-icons/pi";
 import defaultImg from '../../../public/Images/defaultProfile.jpg'
 import { useDispatch, useSelector } from 'react-redux'
 import {fetchUserData} from '../../Redux/Reducers/user'
+import Api from '../../Config/api'
+import {successNotification} from '../../Components/Notifications'
+import {domain} from '../../Config/domain'
+
+
+
 function Profile() {
 
     const { t, i18n } = useTranslation()
@@ -27,22 +33,55 @@ function Profile() {
         setImage(file)
     }
 
+    const [userValues , setUserValues] = useState({
+        firstName : "",
+        lastName : "",
+        mobileNumber : "",
+        gender : "",
+        email : "",
+        nationality : "",
+        address : "",
+        profilePicture : ""
+    })
     useEffect(()=>{
         dispatch(fetchUserData())
+        setUserValues(userData.data.user)
     }, [])
 
-    const [userValues , setUserValues] = useState({
-        firstName : userData.data.user.firstName,
-        lastName : userData.data.user.lastName,
-        phone : userData.data.user.phone,
-        gender : userData.data?.user?.gender,
-        email : userData.data.user.email,
-    })
+    // console.log(userData.data.user.profilePicture);
+    
 
-    const handleUserPatch = ()=>{
-
+    const handleUserPatch = (e)=>{
+        setUserValues((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }))
     }
 
+    const handleSubmitUpdate = (e)=>{
+        e.preventDefault()
+        console.log(userValues);
+        Api.patch(`/users/${userData.data.user._id}` , {
+            ...userValues , 
+            profilePicture : image || userValues.profilePicture
+        } , {
+            headers : {
+                "Content-Type" : "multipart/form-data"
+            }
+        })
+        .then((res)=>{
+            console.log(res.data);
+            successNotification("Profile Updated Successfully ")
+            dispatch(fetchUserData())
+            
+        })
+        .catch((error)=>{
+            const errMsg =
+                    error?.response?.data?.message || error?.response?.data?.error;
+                console.log(errMsg);
+        })
+
+    }
     return (
         <section className={
             i18n.language == 'en' ? "dirLtR" : "dirRtL"
@@ -57,20 +96,20 @@ function Profile() {
             <section className='profileParent containerUser'>
                 <Container>
                     <div className="contactParent">
-                        <Form onSubmit="">
+                        <Form onSubmit={handleSubmitUpdate}>
                             <Row>
 
                                 <div className="ProfileImgBox">
                                     <div className="imgView">
                                         <img
-                                            src={(image && URL.createObjectURL(image)) || defaultImg}
+                                            src={(image && URL.createObjectURL(image)) || (userData.data.user.profilePicture ? domain + '/uploads/users/'+ userData?.data?.user?.profilePicture  : defaultImg) }
                                             alt="profile img"
                                         />
 
                                         <div className="imageControl">
                                             <input
                                                 type="file"
-                                                name="image"
+                                                name="profilePicture"
                                                 id="image"
                                                 style={{ display: "none" }}
                                                 ref={imgControl}
@@ -102,6 +141,7 @@ function Profile() {
                                             }
                                             <Form.Control
                                                 type="text"
+                                                name='firstName'
                                                 value={userValues.firstName}
                                                 onChange={handleUserPatch}
                                                 placeholder=''
@@ -124,6 +164,7 @@ function Profile() {
                                             }
                                             <Form.Control
                                                 type="text"
+                                                name='lastName'
                                                 value={userValues.lastName}
                                                 onChange={handleUserPatch}
                                                 placeholder=''
@@ -146,7 +187,8 @@ function Profile() {
                                             }
                                             <Form.Control
                                                 type="text"
-                                                value={userValues.phone}
+                                                name='mobileNumber'
+                                                value={userValues.mobileNumber}
                                                 onChange={handleUserPatch}
                                                 placeholder={t('placeholderPhone')}
                                                 className='inputField'
@@ -168,6 +210,7 @@ function Profile() {
                                             }
                                             <Form.Control
                                                 type="email"
+                                                name='email'
                                                 value={userValues.email}
                                                 placeholder={t('placeholderEmail')}
                                                 className='inputField'
@@ -188,17 +231,13 @@ function Profile() {
                                                 i18n.language == 'ar' &&
                                                 <span className='inputIcon me-4'> <PiSubtitlesFill /> </span>
                                             }
-                                            {/* <Form.Control
-                                                type="text"
-                                                placeholder={t('placeholderSubject')}
-                                                className=''
-                                            /> */}
                                             <select
                                                 className='inputField w-100 ms-3 me-3'
                                                 name='nationality'
-                                                // value={updateValue.gender}
-                                                // onChange={handleUpdateChange}
+                                                value={userValues.nationality}
+                                                onChange={handleUserPatch}
                                             >
+                                                <option selected> {t('select')} </option>
                                                 <option> {t('Saudi')} </option>
                                                 <option>{t('NonSaudi')}</option>
                                             </select>
@@ -207,7 +246,7 @@ function Profile() {
                                 </Col>
                                 <Col lg='6' md='6' sm='10' className='inputParent'>
                                     <Form.Group className="mb-3 groupParent" >
-                                        <Form.Label className='inputLabel'> {t('yourgender')} </Form.Label>
+                                        <Form.Label className='inputLabel'> {t('yourGender')} </Form.Label>
                                         <div className="inputData">
                                             {
                                                 i18n.language == 'en' &&
@@ -220,10 +259,11 @@ function Profile() {
                                             
                                             <select
                                                 className='inputField w-100 ms-3 me-3'
-                                                name='nationality'
+                                                name='gender'
                                                 value={userValues.gender}
-                                                // onChange={handleUpdateChange}
+                                                onChange={handleUserPatch}
                                             >
+                                                <option selected> {t('select')} </option>
                                                 <option> {t('Male')} </option>
                                                 <option>{t('Female')}</option>
                                             </select>
@@ -244,6 +284,9 @@ function Profile() {
                                             }
                                             <Form.Control
                                                 type="text"
+                                                name='address'
+                                                value={userValues.address}
+                                                onChange={handleUserPatch}
                                                 placeholder={t('placeholderSubject')}
                                                 className='inputField'
                                             />
@@ -251,7 +294,6 @@ function Profile() {
                                     </Form.Group>
                                 </Col>
                                 
-
                                 <Col lg='12' md='6' sm='10' className='inputParent d-flex justify-content-center'>
                                     <Button
                                         variant='outline-secondary'

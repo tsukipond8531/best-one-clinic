@@ -26,13 +26,6 @@ body {
     font-style: normal !important;
 }
 
-/* body[dir="rtl"] {
-    direction: rtl;
-}
-
-body[dir="ltr"] {
-    direction: ltr;
-} */
 
 .dirLtR {
     direction: ltr !important;

@@ -38,7 +38,7 @@
     "Profile" :"Profile",
     "logout" : "Logout",
     "YourNationality" : "Your Nationality",
-    "yourCity" : "Your City",
+    "yourCity" : "Your Address",
     "Update" : "Update",
     "ChangeImage" : "Change Image",
     "yourAge" : "Your Age",
@@ -66,5 +66,10 @@
     "showAllOffers" : "Show All Offers",
     "updateOffer" : "Update Offer",
     "allFav" : "All Favorite",
-    "favNum" : "Favorite Number"
+    "favNum" : "Favorite Number",
+    "firstName" : "First Name" ,
+    "lastName" : "Last Name" ,
+    "select" : "--- Select ---",
+    "yourGender" : "Your Gender"
+
 }
