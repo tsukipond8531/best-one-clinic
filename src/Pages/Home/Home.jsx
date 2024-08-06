@@ -7,6 +7,7 @@ import AboutUs from '../About Us/AboutUs'
 import Devices from '../Devices/Devices'
 import { useDispatch } from 'react-redux'
 import {fetchUserData} from '../../Redux/Reducers/user'
+import Contact from '../Contact US/Contact'
 function Home() {
 
     const dispatch = useDispatch()
@@ -29,6 +30,9 @@ function Home() {
             <Devices />
             {/* End Devices Section */}
 
+            {/* Start Contact Us */}
+            <Contact/>
+            {/* End Contact Us */}
         </section>
     )
 }

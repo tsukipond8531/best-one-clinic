@@ -127,7 +127,7 @@ function OfferOption() {
                                                     <Card.Title className='optionTitle'>
                                                         {item.price} SAR
                                                     </Card.Title>
-                                                    <Card.Title className='optionTitle'>
+                                                    <Card.Title className='discount'>
                                                         Discount :  {item.discount} %
                                                     </Card.Title>
                                                 </Card.Body>
