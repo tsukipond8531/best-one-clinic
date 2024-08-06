@@ -1,4 +1,4 @@
-import {  } from 'react'
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from './Pages/Login/Login'
 import Header from './Pages/Header/Header';
@@ -28,18 +28,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 // Import Api File
-// import { useDispatch , useSelector } from 'react-redux';
-// import { fetchUserData } from './Redux/Reducers/user';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUserData } from './Redux/Reducers/user';
 
 function App() {
 
-  // const dispatch = useDispatch()
-  // const user = useSelector((state)=> state.user.data)
-  // console.log(user);
+  const dispatch = useDispatch()
+  const user = useSelector((state) => state.user.data)
+  // console.log(user.data);
 
-  // useEffect(()=>{
-  //   dispatch(fetchUserData())
-  // } , [])
+  useEffect(() => {
+    dispatch(fetchUserData())
+  }, [])
 
   return (
     <>
@@ -63,12 +63,16 @@ function App() {
           <Route path='/product/payment/:id' element={<Payment />} />
 
           {/* Admin Routes */}
-          <Route path='/admin/allComplaints' element={<ShowComplaints />} />
-          <Route path='/admin/createOffer' element={<CreateOffer />} />
-          <Route path='/admin/showAllOffers' element={<ShowAllOffer />} />
-          <Route path='/admin/offer/update/:id' element={< UpdateOffer />} />
-          <Route path='/admin/allFav' element={< AllUsersFav />} />
-          <Route path='/admin/allFav/item/:favId' element={< UsersFav />} />
+          {user?.data?.user?.role == 'admin' &&
+            <>
+              <Route path='/admin/allComplaints' element={<ShowComplaints />} />
+              <Route path='/admin/createOffer' element={<CreateOffer />} />
+              <Route path='/admin/showAllOffers' element={<ShowAllOffer />} />
+              <Route path='/admin/offer/update/:id' element={< UpdateOffer />} />
+              <Route path='/admin/allFav' element={< AllUsersFav />} />
+              <Route path='/admin/allFav/item/:favId' element={< UsersFav />} />
+            </>
+          }
 
 
           <Route path='/login' element={<Login />} />
