@@ -209,7 +209,8 @@ export const Form = styled.form`
         i {
             text-align: center;
             line-height: 55px;
-            color: #acacac;
+            /* color: #acacac; */
+            color: #29445c;
             transition: 0.5s;
             font-size: 1.2rem;
             transform: translateY(2px);
@@ -222,7 +223,6 @@ export const Form = styled.form`
             font-weight: 400;
             font-size: 1.2rem;
             color: #374955;
-
         }
         .pass{
             /* background-color: #DDA25E; */

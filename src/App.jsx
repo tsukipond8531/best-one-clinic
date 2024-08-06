@@ -46,6 +46,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
+          {/* User Routes */}
           <Route index path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/about' element={<AboutUs />} />
@@ -74,9 +75,10 @@ function App() {
             </>
           }
 
-
+          {/* Registration Routes */}
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Login />} />
+
         </Routes>
         <Footer />
       </Router>
