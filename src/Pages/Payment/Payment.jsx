@@ -1,5 +1,6 @@
 import {} from 'react'
 import { useParams } from 'react-router-dom'
+import './Payment.style.css'
 
 function Payment() {
     const { id } = useParams()

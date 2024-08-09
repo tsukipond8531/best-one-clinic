@@ -1,48 +1,65 @@
-import { } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Row, Col, Card, Button } from 'react-bootstrap';
+import { Row, Col,  Button } from 'react-bootstrap';
 import '../Offers/Offers.style.css'
-import { ErrorNotification, successNotification } from '../../Components/Notifications';
 import { useEffect } from 'react';
-import Api from '../../Config/api';
-import { domain } from '../../Config/domain';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCart } from '../../Redux/Reducers/Cart';
-
-
+import CardItem from './CardItem';
+import { IoMdPricetags } from "react-icons/io";
+import { RiDiscountPercentFill } from "react-icons/ri";
+import './Cart.style.css'
 function Cart() {
     const { t, i18n } = useTranslation()
     const dispatch = useDispatch()
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(fetchCart())
-    } , [])
-    const CartItems = useSelector((state)=> state.Cart.AllData)
+    }, [dispatch]
+    )
+    const CartItems = useSelector((state) => state.Cart.AllData)
     // console.log(CartItems.data.cart.items)
-    let cartData = CartItems?.data?.cart?.items
-    console.log(cartData);
-    
-    // console.log(cartData[0].offer);
+    const cartData = CartItems?.data?.cart?.items || [];
 
+    // Step 1: State to hold cart items and total price
+    const [cart, setCart] = useState(cartData);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalDiscount , setTotalDiscount] = useState(0)
+    const [discount , setDiscount] = useState(0)
 
+    // Step 2: Calculate total price
+    useEffect(() => {
+        const calculateTotalPrice = () => {
+            let total = 0;
+            let subtotal = 0;
+            let finalTotal = 0;
+            cart.forEach(item => {
+                total += item.offer.price * item.quantity;
+                subtotal += total * ((item.offer.discount) / 100 ) 
+                finalTotal = total - subtotal ;
+            });
+            setTotalPrice(finalTotal);
+            setTotalDiscount(total)
+            setDiscount(subtotal)
+        };
 
-    const DeleteFromCart = (id)=>{
-        try {
-            Api.delete(`/carts/${id}`)
-            .then((res)=>{
-                console.log(res.data);
-                successNotification('Offer Deleted From Cart Successfully ')
-                dispatch(fetchCart())
-            })
-            .catch((e)=>{
-                const errMsg = e?.response?.data?.message || e?.response?.data?.error
-                console.log(errMsg);
-                ErrorNotification(errMsg || "Deleted From Cart Not Completed !")
-            })
-        } catch (error) {
-            ErrorNotification(error.message)
-        }
+        calculateTotalPrice();
+    }, [cart]);
 
-    }
+    // Step 3: Handle quantity change
+    const handleQuantityChange = (id, newQuantity) => {
+        const updatedCart = cart.map(item => {
+            if (item.id === id) {
+                return { ...item, quantity: newQuantity };
+            }
+            return item;
+        });
+        setCart(updatedCart); // Ensure this triggers a re-render
+    };
+
+    // This effect ensures cart is initialized with fetched data
+    useEffect(() => {
+        setCart(cartData);
+    }, [CartItems]);
 
 
     return (
@@ -56,113 +73,94 @@ function Cart() {
                 <span className='headerSpan'></span>
             </div>
 
-            <div className="containerUser">
-                <div className="optionParent">
-                    <Row>
-                        {
-                            i18n.language === 'en' ?
-                                cartData?.map((item) => (
-                                    <>
-                                        <Col lg='4' md='6' sm='10' className='optionItem mb-3' >
-                                            <Card style={{ width: "100%" }}>
-                                                <Card.Header  className='FavHeader'>
-                                                    {
-                                                        item.offer.category
-                                                    }
-                                                </Card.Header>
-                                                <Card.Img src={domain + '/uploads/offers/' + item.offer.images[item.offer.images.length - 1 ]} className='optionImage' />
-                                                <Card.Body>
-                                                    <Card.Title className='optionTitle'>
-                                                        {item.offer.nameEn}
-                                                    </Card.Title>
-                                                    <Card.Text className='optionDescription'>
-                                                        {item.offer.descriptionEn}
-                                                    </Card.Text>
-                                                    <Card.Title className='optionTitle'>
-                                                        {item.offer.price} SAR
-                                                    </Card.Title>
-                                                    <Card.Title className='optionTitle'>
-                                                        Discount :  {item.offer.discount} %
-                                                    </Card.Title>
-                                                </Card.Body>
-                                                <Card.Footer className='optionFooter'>
-                                                    <Button
-                                                        variant='outline-danger'
-                                                        className='me-2 p-2 btnFav'
-                                                        onClick={() => DeleteFromCart(item.offer._id)}
-                                                    >
-                                                        Delete From Cart
-                                                    </Button>
-                                                    <Button
-                                                        variant='outline-success'
-                                                        className='p-2 btnAdd'
-                                                        name='offerId'
-                                                        // value={offerCartID.offerId}
-                                                        // onChange={handleOfferIdChange}
-                                                        // onClick={() => addToCart(item._id)}
+            {
+                cartData ? (
+                    <>
+                        <div className="containerUser">
+                            <Row>
+                                <Col lg='8' md='6' sm='12'>
+                                    <div className="optionParent">
+                                        <Row>
+                                            {
+                                                i18n.language === 'en' ?
+                                                    cartData?.map((item) => (
+                                                        <>
+                                                            <CardItem
+                                                                imgPath={item.offer.images[item.offer.images.length - 1]}
+                                                                categoryNameAr={item.offer.categoryNameEn}
+                                                                nameAr={item.offer.nameEn}
+                                                                quantity={item.quantity}
+                                                                price={item.offer.price}
+                                                                _id={item.offer._id}
+                                                                onQuantityChange={(newQuantity) => handleQuantityChange(item.id, newQuantity)}
 
-                                                    >
-                                                        Add To Cart
-                                                    </Button>
-                                                </Card.Footer>
-                                            </Card>
-                                        </Col>
-                                    </>
-                                )
-                                )
-                                :
-                                (
-                                    cartData?.map((item) => (
-                                        <>
-                                            <Col lg='4' md='6' sm='10' className='optionItem mb-3' >
-                                                <Card style={{ width: "100%" }}>
-                                                <Card.Header className='FavHeader'>
-                                                    {
-                                                        item.offer.category
-                                                    }
-                                                </Card.Header>
-                                                    <Card.Img src={domain + '/uploads/offers/' + item.offer.images[item.offer.images.length - 1 ] } className='optionImage' />
-                                                    <Card.Body>
-                                                        <Card.Title className='optionTitle'>
-                                                            {item.offer.nameAr}
-                                                        </Card.Title>
-                                                        <Card.Text className='optionDescription'>
-                                                            {item.offer.descriptionAr}
-                                                        </Card.Text>
-                                                        <Card.Title className='optionTitle'>
-                                                            {item.offer.price} ريال سعودي
-                                                        </Card.Title>
-                                                        <Card.Title className='discount'>
-                                                        الخصم :  {item.offer.discount} %
-                                                    </Card.Title>
-                                                    </Card.Body>
-                                                    <Card.Footer className='optionFooter'>
-                                                        <button
-                                                            className='me-2 p-2 btnFav'
-                                                            onClick={() => DeleteFromCart(item.offer._id)}
-                                                        >
-                                                            حذف من السلة
-                                                        </button>
-                                                        <button
-                                                            className='p-2 btnAdd'
-                                                            name='offerId'
-                                                            // value={offerCartID.offerId}
-                                                            // onChange={handleOfferIdChange}
-                                                            // onClick={() => addToCart(item._id)}
-                                                        >
-                                                            أضافة الي السلة
-                                                        </button>
-                                                    </Card.Footer>
-                                                </Card>
-                                            </Col>
-                                        </>
-                                    )
-                                    )
-                                )
+
+                                                            />
+                                                        </>
+                                                    )
+                                                    )
+                                                    :
+                                                    (
+                                                        cartData?.map((item) => (
+                                                            <>
+                                                                <CardItem
+                                                                    imgPath={item.offer.images[item.offer.images.length - 1]}
+                                                                    categoryNameAr={item.offer.categoryNameAr}
+                                                                    nameAr={item.offer.nameAr}
+                                                                    quantity={item.quantity}
+                                                                    price={item.offer.price}
+                                                                    _id={item.offer._id}
+                                                                    onQuantityChange={(newQuantity) => handleQuantityChange(item.id, newQuantity)}
+
+                                                                />
+                                                            </>
+                                                        )
+                                                        )
+                                                    )
+                                            }
+                                        </Row>
+                                    </div>
+                                </Col>
+
+                                <Col lg='4' md='6' sm='12'>
+                                    <div className="totalParent">
+                                        <div className="totalContent">
+                                            <h1>
+                                                {
+                                                    i18n.language == 'ar' ? "السعر كاملا : " : "Total Price : "
+                                                }
+                                            </h1>
+                                            <h2 className='totalPrice'>
+                                                <IoMdPricetags style={{ color: "green" }} /> {totalPrice.toFixed(2) + " " + t('SAR')}
+                                            </h2>
+                                            <h2 className='totalBefore'>
+                                                <IoMdPricetags style={{ color: "green" }} /> {totalDiscount.toFixed(2) + " " + t('SAR')}
+                                            </h2>
+                                            <h2 className=''>
+                                                <RiDiscountPercentFill style={{ color: "green" }} /> {t('discount') + " " +  discount.toFixed(2) }
+                                            </h2>
+                                            <Button
+                                                variant='outline-success'
+                                                className='btn-checkout'
+                                            >
+                                                {
+                                                    i18n.language == 'ar' ? "الدفع" : "Checkout"
+                                                }
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
+                    </>
+                ) : (
+                    <h1 className='text-center '>
+                        {
+                            i18n.language == 'ar' ? " لا يوجد عناصر في السلة " : " No Items In The Cart "
                         }
-                    </Row>
-                </div>
-            </div>
+                    </h1>
+                )
+            }
 
         </section>
     )

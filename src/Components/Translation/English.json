@@ -70,6 +70,9 @@
     "firstName" : "First Name" ,
     "lastName" : "Last Name" ,
     "select" : "--- Select ---",
-    "yourGender" : "Your Gender"
+    "yourGender" : "Your Gender",
+    "showDetails" : "Show Offer Details",
+    "SAR" : "SAR"
+
 
 }

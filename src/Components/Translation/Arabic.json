@@ -69,7 +69,11 @@
     "firstName" : "الاسم الاول",
     "lastName" : "الاسم الثاني",
     "select" : "--- اختر ---",
-    "yourGender" : "نوعك"
+    "yourGender" : "نوعك",
+    "showDetails" : "عرض تفاضيل العرض",
+    "SAR" : "ريال سعودي"
+
+
 
     
 

@@ -172,7 +172,9 @@
 
 }
 .btnCart{
-    width: 100px;
+    width: 45px;
+    height: 45px !important;
+    border-radius: 50% !important;
 }
 
 
@@ -220,5 +222,6 @@
         margin: 0 !important;
         margin-bottom: 10px !important;
         width: 180px !important;
+        border-radius: 20px !important;
     }
 }

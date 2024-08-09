@@ -30,8 +30,8 @@ function Header() {
     const user = useSelector((state) => state?.user?.data)
     // console.log(user.data.user.role);
     // console.log(isLogin);
-    const cartCounter = useSelector((state) => state.counter.CartValue)
-    const favCounter = useSelector((state) => state.counter.FavValue)
+    // const cartCounter = useSelector((state) => state.counter.CartValue)
+    // const favCounter = useSelector((state) => state.counter.FavValue)
 
     // Fetch User Data
     useEffect(() => {
@@ -127,6 +127,21 @@ function Header() {
                         {
                             isLogin && user?.data?.user?.role == 'user' &&
                             <>
+                                
+                                <Button
+                                    variant="outline-secondary"
+                                    onClick={() => navigate('/cart')}
+                                    className="btnLogin me-2 ms-2 dirLtR btnCart smView"
+                                >
+                                    <span className='me-2'> <ImCart />  </span>   
+                                </Button>
+                                <Button
+                                    variant="outline-secondary"
+                                    onClick={() => navigate('/favorite')}
+                                    className="btnLogin me-2 ms-2 dirLtR btnCart smView"
+                                >
+                                    <span className='me-2'> <FaHeart />  </span> 
+                                </Button>
                                 <Button
                                     variant="outline-secondary"
                                     onClick={() => navigate('/profile')}
@@ -134,21 +149,6 @@ function Header() {
                                 >
                                     {t('Profile')}
                                 </Button>
-                                <Button
-                                    variant="outline-secondary"
-                                    onClick={() => navigate('/cart')}
-                                    className="btnLogin me-2 ms-2 dirLtR btnCart smView"
-                                >
-                                    <span className='me-2'> <ImCart /> :  </span>   {cartCounter}
-                                </Button>
-                                <Button
-                                    variant="outline-secondary"
-                                    onClick={() => navigate('/favorite')}
-                                    className="btnLogin me-2 ms-2 dirLtR btnCart smView"
-                                >
-                                    <span className='me-2'> <FaHeart />  : </span>  {favCounter}
-                                </Button>
-
                             </>
                         }
                         {
