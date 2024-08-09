@@ -55,7 +55,7 @@ body {
     /* letter-spacing: 2px; */
     font-weight: 700;
     font-size: 3.5rem;
-    color: var(--main2Color);
+    color: var(--bgColor);
     text-transform: capitalize;
 }
 
@@ -63,7 +63,7 @@ body {
     width: 200px;
     height: 3px;
     margin: 0 30px;
-    background-color: var(--main2Color);
+    background-color: var(--bgColor);
 }
 
 .containerUser {

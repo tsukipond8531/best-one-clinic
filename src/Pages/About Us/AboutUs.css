@@ -16,7 +16,7 @@
 }
 .aboutContent-data span{
     font-size: 5rem;
-    color: var(--main2Color);
+    color: var(--bgColor);
 }
 
 .aboutContent-data h1{

@@ -1,7 +1,7 @@
 import { } from 'react'
 import { Col, Row } from 'react-bootstrap'
 
-import aboutImg from '../../../public/Images/about.png'
+import aboutImg from '../../../public/Images/aboutUs.png'
 import './AboutUs.css'
 import { ImQuotesLeft } from "react-icons/im";
 import { ImQuotesRight } from "react-icons/im";
